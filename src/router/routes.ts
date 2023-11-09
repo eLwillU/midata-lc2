@@ -80,6 +80,17 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: '/midata/calendar',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/midata/CalendarView.vue'),
+        children: [],
+      },
+    ],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

@@ -69,6 +69,11 @@ const midataLinksList = [
     link: '/midata/weekView',
   },
   {
+    title: 'Kalender',
+    icon: 'calendar_today',
+    link: '/midata/calendar',
+  },
+  {
     title: 'Termine hinzufügen',
     icon: 'add_to_photos',
     link: '/midata/addAppointment',
