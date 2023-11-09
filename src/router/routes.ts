@@ -36,6 +36,50 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: '/midata/addAppointment',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/midata/AddAppointment.vue'),
+        children: [],
+      },
+    ],
+  },
+  {
+    path: '/midata/login',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/midata/LoginPage.vue'),
+        children: [],
+      },
+    ],
+  },
+  {
+    path: '/midata/dayView',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/midata/DayView.vue'),
+        children: [],
+      },
+    ],
+  },
+  {
+    path: '/midata/weekView',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/midata/WeekView.vue'),
+        children: [],
+      },
+    ],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

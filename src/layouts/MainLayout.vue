@@ -10,7 +10,7 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        <q-toolbar-title> Demo App (Starter-Template) </q-toolbar-title>
+        <q-toolbar-title> MindSchedule </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
@@ -53,21 +53,26 @@ function toggleLeftDrawer() {
 }
 
 const midataLinksList = [
-  {
-    title: 'Einführung in MIDATA',
-    icon: 'rocket',
-    link: '/midata/introduction',
+{
+    title: 'Login',
+    icon: 'calendar_view_day',
+    link: '/midata/login',
   },
   {
-    title: 'Meine erste MIDATA App',
-    icon: 'terminal',
-    link: '/midata/myFirstApp',
+    title: 'Tagesansicht',
+    icon: 'calendar_view_day',
+    link: '/midata/dayView',
   },
   {
-    title: 'Midata Demo',
-    icon: 'auto_fix_high',
-    link: '/midata/demo',
+    title: 'Wochenansicht',
+    icon: 'calendar_view_week',
+    link: '/midata/weekView',
   },
+  {
+    title: 'Termine hinzufügen',
+    icon: 'add_to_photos',
+    link: '/midata/addAppointment',
+  }
 ];
 </script>
 
