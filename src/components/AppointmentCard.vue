@@ -1,6 +1,6 @@
 <template>
   <q-card>
-    <div>Termin XY</div>
+    <div>Termin Blabla</div>
   </q-card>
 </template>
 

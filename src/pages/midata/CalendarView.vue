@@ -1,9 +1,4 @@
 <template>
-  <div class="q-pa-md">
-    <!--
-    <q-date v-model="date" :events="events" event-color="orange" />
-  --></div>
-
   <q-card>
     <div>Datum auswählen:</div>
     <q-btn color="primary">
@@ -45,5 +40,11 @@ import { ref } from 'vue';
 const date = new Date().toLocaleDateString('de-De');
 const proxyDate = ref(date);
 
-const events = ['2023/11/10', '2023/11/17', '2023/11/13', '2023/11/12'];
+const events = [
+  '2023/11/10',
+  '2023/11/17',
+  '2023/11/13',
+  '2023/11/12',
+  '2023/12/10',
+];
 </script>
