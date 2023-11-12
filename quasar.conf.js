@@ -52,9 +52,10 @@ module.exports = configure(function (ctx) {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
 
       // transpile: false,
-      publicPath: process.env.NODE_ENV === 'production'
-        ? '/midata-quasar-starter-app/' // necessary if you serve app on GitHub pages, corresponds to repository name
-        : '/',
+      publicPath:
+        process.env.NODE_ENV === 'production'
+          ? '/mindschedule/' // necessary if you serve app on GitHub pages, corresponds to repository name
+          : '/',
 
       // Add dependencies for transpiling with Babel (Array of string/regex)
       // (from node_modules, which are by default not transpiled).
@@ -73,11 +74,9 @@ module.exports = configure(function (ctx) {
         VUE_FHIR_BASE_URL: ctx.dev
           ? 'https://test.midata.coop'
           : 'https://test.midata.coop',
-        VUE_FHIR_APP_NAME: ctx.dev
-          ? 'midata_quasar_starter_app'
-          : 'midata_quasar_starter_app',
+        VUE_FHIR_APP_NAME: ctx.dev ? 'mindschedule' : 'mindschedule',
         VUE_FHIR_REDIRECT_URL: ctx.dev
-          ? 'http://localhost:8080/#/midata/demo'
+          ? 'http://localhost:8080/#/midata/login'
           : 'https://i4mi.github.io/midata-quasar-starter-app/#/midata/demo', // enter here production url for midata redirect, this url also has to be declared in the Midata app declaration
       },
 

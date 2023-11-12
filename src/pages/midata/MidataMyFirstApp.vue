@@ -577,8 +577,8 @@
         OAuth 2.0 Prozesses eingesetzt.
       </p>
       <q-btn
-        to="/midata/demo"
-        label="MIDATA Demo"
+        to="/midata/login"
+        label="MIDATA login"
         class="midata-fade text-white"
       ></q-btn>
     </div>

@@ -19,7 +19,7 @@ onMounted(() => {
         Promise.all([store.restoreFromMidata(), midata.getPatientResource()])
           .then((results) => {
             console.log('Patient loaded: ', results[1]);
-            router.push('/midata/demo');
+            router.push('/midata/login');
           })
           .catch();
       } else if (midata.isLoggedIn()) {

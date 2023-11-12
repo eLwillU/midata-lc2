@@ -2,7 +2,7 @@
   "name": "quasarapp",
   "version": "1.0.0",
   "description": "A Quasar Framework app",
-  "productName": "Demo App",
+  "productName": "MindSchedule",
   "author": {
     "name": "Nicolas Gujer @ Institute for Medical Informatics (I4MI) - Bern University of Applied Sciences (BFH)",
     "email": "medinf.i4mi@bfh.ch"
