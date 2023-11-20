@@ -1,6 +1,6 @@
 <template>
   <login-card v-if="!$midata.isLoggedIn()"></login-card>
-  <q-page v-if="$midata.isLoggedIn()">
+  <q-page v-if="$midata.isLoggedIn()" class="background-image">
     <div class="q-mb-xl">
       <div class="text-h3 text-weight-thin">Midata Demo</div>
       <q-separator spaced class="midata-fade"></q-separator>
@@ -55,6 +55,8 @@
   </q-page>
 </template>
 
+
+
 <script setup lang="ts">
 import LoginCard from '../../components/LoginCard.vue';
 import PatientResource from 'components/midata/PatientResource.vue';
@@ -72,7 +74,12 @@ function logout() {
 </script>
 
 <style lang="sass" scoped>
+// .background-image
+//   background-image: url('./karin/git/midata-lc2/Suchtfachklinik_Zürich.jpg') // Pfad zu deinem Bild
+//   background-size: cover // Stellt sicher, dass das Bild den gesamten Bereich abdeckt
+//   background-position: center
 .innerCardScroll
   overflow: scroll
   height: 300px
+
 </style>

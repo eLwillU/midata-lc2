@@ -55,7 +55,7 @@ function toggleLeftDrawer() {
 const midataLinksList = [
 {
     title: 'Login',
-    icon: 'calendar_view_day',
+    icon: 'login',
     link: '/midata/login',
   },
   {
