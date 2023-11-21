@@ -1,7 +1,5 @@
 <template>
-<div>Add Appointment</div>
+  <div>Add Appointment</div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>

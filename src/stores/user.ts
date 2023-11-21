@@ -13,15 +13,15 @@ export const useUserStore = defineStore('user', () => {
    */
   const patientResource = useSessionStorage<Patient>(
     'patientResource',
-    {} as Patient
+    {} as Patient,
   );
   const patientResourceVisible = useSessionStorage<boolean>(
     'patientResourceVisible',
-    false
+    false,
   );
   const patientResourceExpanded = useSessionStorage<boolean>(
     'patientResourceExpanded',
-    false
+    false,
   );
 
   /**
@@ -69,7 +69,7 @@ export const useUserStore = defineStore('user', () => {
    */
   async function copyItemToClipBoard(
     item: any,
-    label = 'Resource'
+    label = 'Resource',
   ): Promise<void> {
     try {
       await copyToClipboard(JSON.stringify(item, null, 2));

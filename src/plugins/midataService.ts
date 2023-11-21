@@ -8,7 +8,7 @@ export default class MidataService {
     this.jsOnFhir = new JSOnFhir(
       process.env.VUE_FHIR_BASE_URL,
       process.env.VUE_FHIR_APP_NAME,
-      process.env.VUE_FHIR_REDIRECT_URL
+      process.env.VUE_FHIR_REDIRECT_URL,
     );
   }
 

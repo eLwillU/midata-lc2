@@ -53,7 +53,7 @@ function toggleLeftDrawer() {
 }
 
 const midataLinksList = [
-{
+  {
     title: 'Login',
     icon: 'login',
     link: '/midata/login',
@@ -77,7 +77,7 @@ const midataLinksList = [
     title: 'Termine hinzufügen',
     icon: 'add_to_photos',
     link: '/midata/addAppointment',
-  }
+  },
 ];
 </script>
 

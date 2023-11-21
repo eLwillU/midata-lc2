@@ -64,7 +64,7 @@
               @click="
                 store.copyToClipBoard(
                   store.patientResource,
-                  'Patienten Resource'
+                  'Patienten Resource',
                 )
               "
             >
