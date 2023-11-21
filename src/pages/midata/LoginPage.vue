@@ -73,6 +73,7 @@ function logout() {
 }
 </script>
 
+
 <style lang="sass" scoped>
 // .background-image
 //   background-image: url('./karin/git/midata-lc2/Suchtfachklinik_Zürich.jpg') // Pfad zu deinem Bild
