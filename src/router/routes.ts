@@ -42,7 +42,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
-        component: () => import('pages/midata/AddAppointment.vue'),
+        component: () => import('src/pages/AddAppointment.vue'),
         children: [],
       },
     ],
