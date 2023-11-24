@@ -1,6 +1,7 @@
 import { JSOnFhir } from '@i4mi/js-on-fhir';
 import { Patient } from '@i4mi/fhir_r4';
 
+
 export default class MidataService {
   jsOnFhir: JSOnFhir;
 
@@ -70,5 +71,9 @@ export default class MidataService {
         })
         .catch((error) => reject(error));
     });
+  }
+
+  public createObservation(){
+    console.log('Creating...')
   }
 }

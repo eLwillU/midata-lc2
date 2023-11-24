@@ -20,7 +20,11 @@
       </template>
     </q-file>
   </div>
-  <q-btn>Datei absenden</q-btn>
+  <q-btn @click="$midata.getPatientResource()">Patient-Ressource Getten</q-btn>
+  <q-btn @click="$midata.createObservation()">Observation Createn</q-btn>
 </template>
 
-<script setup></script>
+<script setup>
+
+
+</script>
