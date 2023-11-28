@@ -29,6 +29,7 @@
   :columns="columns"
   row-key="time"
   :separator="separator"
+  :rows-per-page-options="[1, 3, 5, 7, 10, 15, 20, 25, 50, 0 ]"
   >
   <template v-slot:body-cell-monday="props">
       <q-td :props="props" :style="getCellStyle(props)">
