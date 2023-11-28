@@ -1,0 +1,137 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "participant": [
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "ATND",
+                    "display": "attender"
+                  }
+                ],
+                "text": "Attender"
+              }
+            ],
+            "actor": {
+              "display": "Andreas Arzt"
+            }
+          },
+          {
+            "actor": {
+              "display": "Armer Patient"
+            }
+          }
+        ],
+        "start": "2023-11-28T10:00:00+01:00",
+        "end": "2023-11-28T12:00:00+01:00",
+        "minutesDuration": 120,
+        "serviceCategory": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/service-category",
+                "code": "13",
+                "display": "Education & Learning"
+              }
+            ],
+            "text": "Ärztliche Gruppentherapie"
+          }
+        ],
+        "description": "Ärztliche Gruppentherapie"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "participant": [
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "ATND",
+                    "display": "attender"
+                  }
+                ],
+                "text": "Attender"
+              }
+            ],
+            "actor": {
+              "display": "Peter Psycho"
+            }
+          },
+          {
+            "actor": {
+              "display": "Armer Patient"
+            }
+          }
+        ],
+        "start": "2023-11-28T14:00:00+01:00",
+        "end": "2023-11-28T15:00:00+01:00",
+        "minutesDuration": 60,
+        "serviceCategory": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/service-category",
+                "code": "22",
+                "display": "Mental Health"
+              }
+            ],
+            "text": "Einzelgespräch"
+          }
+        ],
+        "description": "Einzelgespräch"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "participant": [
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "ATND",
+                    "display": "attender"
+                  }
+                ],
+                "text": "Attender"
+              }
+            ],
+            "actor": {
+              "display": "Karl Hunger"
+            }
+          },
+          {
+            "actor": {
+              "display": "Armer Patient"
+            }
+          }
+        ],
+        "start": "2023-11-28T18:00:00+01:00",
+        "end": "2023-11-28T19:00:00+01:00",
+        "minutesDuration": 60,
+        "serviceCategory": [
+          {
+            "text": "Abendessen"
+          }
+        ],
+        "description": "Abendessen"
+      }
+    }
+  ]
+}

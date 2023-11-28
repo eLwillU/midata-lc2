@@ -1,50 +1,23 @@
 <template>
-  <q-card>
-    <div>Datum auswählen:</div>
-    <q-btn color="primary">
-      {{ proxyDate }}
-      <q-popup-proxy
-        @before-show="updateProxy"
-        cover
-        transition-show="scale"
-        transition-hide="scale"
-      >
-        <q-date
-          v-model="proxyDate"
-          mask="DD.MM.YYYY"
-          :events="events"
-          event-color="orange"
-        >
-          <div class="row items-center justify-end q-gutter-sm">
-            <q-btn label="Cancel" color="primary" flat v-close-popup />
-            <q-btn
-              label="OK"
-              color="primary"
-              flat
-              @click="save"
-              v-close-popup
-            />
-          </div>
-        </q-date> </q-popup-proxy
-    ></q-btn>
-  </q-card>
 
-  <div v-for="event in events" :key="event">
-    <appointment-card></appointment-card>
-  </div>
+  <q-btn-group push spread toggle>
+    <q-btn label="Mo" @click="currentDay = 'Montag'"></q-btn>
+    <q-btn label="Di" @click="currentDay = 'Dienstag'"></q-btn>
+    <q-btn label="Mi" @click="currentDay = 'Mittwoch'"></q-btn>
+    <q-btn label="Do" @click="currentDay = 'Donnerstag'"></q-btn>
+    <q-btn label="Fr" @click="currentDay = 'Freitag'"></q-btn>
+  </q-btn-group>
+
+  <q-separator></q-separator>
+  <div>{{ currentDay}}</div>
+
+  
+
+
 </template>
 
 <script setup>
-import AppointmentCard from 'src/components/AppointmentCard.vue';
 import { ref } from 'vue';
-const date = new Date().toLocaleDateString('de-De');
-const proxyDate = ref(date);
 
-const events = [
-  '2023/11/10',
-  '2023/11/17',
-  '2023/11/13',
-  '2023/11/12',
-  '2023/12/10',
-];
+const currentDay = ref('Montag');
 </script>
