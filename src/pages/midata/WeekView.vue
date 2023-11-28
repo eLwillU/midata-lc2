@@ -5,10 +5,36 @@
 
 
   <q-table
+  flat bordered
   title="Wochenplan"
   :rows="rows"
   :columns="columns"
-  row-key="time">
+  row-key="time"
+  :separator="separator"
+  @row-click="handleClick"
+  >
+
+  <template v-slot:body-cell-monday="props">
+      <q-td :props="props" :style="getCellStyle(props)">
+        {{ props.row.monday }}
+      </q-td>
+    </template>
+</q-table>
+
+<q-table
+  flat bordered
+  grid
+  title="Wochenplan"
+  :rows="rows"
+  :columns="columns"
+  row-key="time"
+  :separator="separator"
+  >
+  <template v-slot:body-cell-monday="props">
+      <q-td :props="props" :style="getCellStyle(props)">
+        {{ props.row.monday }}
+      </q-td>
+    </template>
 </q-table>
 
 
@@ -59,8 +85,8 @@ const rows = ref([
 {
     name: 'Tag 1',
     time: '08:00 - 09:00',
-    monday: 'Mathe',
-    tuesday: 'Englisch',
+    monday: 'Einzeltherapie',
+    tuesday: 'Gruppentherapie',
     wednesday: 'Biologie',
     thursday: 'Chemie',
     friday: 'Sport'
@@ -87,6 +113,17 @@ const rows = ref([
 
 ]
 )
+const separator = ref('cell')
+const handleClick = (row, col) => {
+console.log(row.name, col.name)
+}
+
+function getCellStyle(props) {
+  if (props.row.monday === 'Einzeltherapie') {
+    return { backgroundColor: 'lightblue' };
+  }
+  return {};
+}
 
 
 const todaysMessage = ref('diese Woche steht folgendes an');
