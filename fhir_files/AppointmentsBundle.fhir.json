@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "type": "transaction",
+  "type": "collection",
   "entry": [
     {
       "resource": {
@@ -22,12 +22,14 @@
             ],
             "actor": {
               "display": "Andreas Arzt"
-            }
+            },
+            "status": "accepted"
           },
           {
             "actor": {
               "display": "Armer Patient"
-            }
+            },
+            "status": "accepted"
           }
         ],
         "start": "2023-11-28T10:00:00+01:00",
@@ -47,6 +49,8 @@
         ],
         "description": "Ärztliche Gruppentherapie"
       }
+
+
     },
     {
       "resource": {
@@ -68,12 +72,14 @@
             ],
             "actor": {
               "display": "Peter Psycho"
-            }
+            },
+            "status": "accepted"
           },
           {
             "actor": {
               "display": "Armer Patient"
-            }
+            },
+            "status": "accepted"
           }
         ],
         "start": "2023-11-28T14:00:00+01:00",
@@ -114,12 +120,14 @@
             ],
             "actor": {
               "display": "Karl Hunger"
-            }
+            },
+            "status": "accepted"
           },
           {
             "actor": {
               "display": "Armer Patient"
-            }
+            },
+            "status": "accepted"
           }
         ],
         "start": "2023-11-28T18:00:00+01:00",
