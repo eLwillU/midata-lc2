@@ -1,6 +1,6 @@
 <template>
 
-  <q-btn-group push spread toggle>
+<q-btn-group push spread toggle>
     <q-btn label="Mo" @click="currentDay = 'Montag'"></q-btn>
     <q-btn label="Di" @click="currentDay = 'Dienstag'"></q-btn>
     <q-btn label="Mi" @click="currentDay = 'Mittwoch'"></q-btn>
@@ -71,10 +71,29 @@
   <q-separator></q-separator>
   <div>{{ currentDay}}</div>
 
+
+  <div v-for="appointment in appointments" :key="appointment.id">
+    {{ appointment.description }}
+  </div>
+
 </template>
 
 <script setup>
-import { ref } from 'vue';
+// import { midata } from 'src/boot/plugins';
+import { midata } from 'src/boot/plugins';
+import { onMounted, ref } from 'vue';
+const appointments = ref([])
+
+onMounted( async () => {
+  try {
+        const loadedAppointments = await midata.loadAppointments();
+        appointments.value = loadedAppointments;
+    } catch (error) {
+        console.error('Error loading appointments:', error);
+    }
+});
+
+
 
 const currentDay = ref('Montag');
 </script>
