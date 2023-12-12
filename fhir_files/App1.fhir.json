@@ -1,0 +1,97 @@
+{
+  "resourceType": "Appointment",
+  "id": "656e479fe0c94730444d2f3b",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://midata.coop/extensions/metadata",
+        "extension": [
+          {
+            "url": "createdAt",
+            "valueDateTime": "2023-12-04T22:41:51+01:00"
+          },
+          {
+            "url": "app",
+            "valueCoding": {
+              "system": "http://midata.coop/codesystems/app",
+              "code": "mindschedule",
+              "display": "MindSchedule"
+            }
+          },
+          {
+            "url": "creator",
+            "valueReference": {
+              "reference": "Patient/5359c5adc453253332830f3f",
+              "display": "TestPersonVorname TestPersonNachname"
+            }
+          },
+          {
+            "url": "modifiedBy",
+            "valueReference": {
+              "reference": "Patient/5359c5adc453253332830f3f",
+              "display": "TestPersonVorname TestPersonNachname"
+            }
+          }
+        ]
+      }
+    ],
+    "versionId": "1701726181706",
+    "lastUpdated": "2023-12-04T22:43:01.706+01:00"
+  },
+  "status": "booked",
+  "serviceCategory": [
+    {
+      "coding": [
+        {
+          "system": "http://example.org/service-category",
+          "code": "GP"
+        }
+      ]
+    }
+  ],
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "system": "http://example.org/service-type",
+          "code": "03"
+        }
+      ]
+    }
+  ],
+  "appointmentType": {
+    "coding": [
+      {
+        "system": "http://example.org/appointment-type",
+        "code": "FOLLOWUP"
+      }
+    ]
+  },
+  "reasonCode": [
+    {
+      "text": "Routine follow-up"
+    }
+  ],
+  "priority": 5,
+  "description": "Routine follow-up appointment",
+  "start": "2023-12-05T10:00:00Z",
+  "end": "2023-12-05T12:00:00Z",
+  "created": "2023-11-01T09:00:00Z",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/5359c5adc453253332830f3f",
+        "display": "Patient's Name"
+      },
+      "required": "required",
+      "status": "accepted"
+    },
+    {
+      "status": "accepted",
+      "actor": {
+        "type": "Location",
+        "identifier": { "value": "N321" }
+      }
+    }
+  ]
+}

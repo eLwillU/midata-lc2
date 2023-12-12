@@ -4,8 +4,9 @@
       v-for="appointment in appointments"
       :key="appointment.id"
       :title="appointment.description"
-      :timeFrom="appointment.start"
-      :timeTo="appointment.end"
+      :fromDateProp="appointment.start"
+      :toDateProp="appointment.end"
+      location="N123"
     ></AppointmentCardComponent>
   </div>
 </template>
@@ -24,6 +25,8 @@ onMounted(async () => {
     console.error('Error loading appointments:', error);
   }
 });
+
+//TODO: Add Location to FHIR Resource!!
 </script>
 
 <style></style>
