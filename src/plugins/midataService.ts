@@ -1,6 +1,5 @@
 import { JSOnFhir } from '@i4mi/js-on-fhir';
-import {  Appointment,Patient } from '@i4mi/fhir_r4';
-
+import { Appointment, Patient } from '@i4mi/fhir_r4';
 
 export default class MidataService {
   jsOnFhir: JSOnFhir;
@@ -54,34 +53,34 @@ export default class MidataService {
     return this.jsOnFhir.handleAuthResponse();
   }
 
+  public getAppointments() {
+    this.jsOnFhir
+      .search('Appointment')
+      .then((result) => {
+        console.log('Appointment Data:', result);
+      })
+      .catch((error) => {
+        console.error('Error fetching appointments:', error);
+      });
+  }
 
-
-  public getAppointments(){
-    this.jsOnFhir.search('Appointment')
+  public loadAppointments() {
+    return new Promise((resolve, reject) => {
+      this.jsOnFhir
+        .search('Appointment')
         .then((result) => {
-            console.log('Appointment Data:', result);
-        })
-        .catch((error) => {
-            console.error('Error fetching appointments:', error);
-        });
-}
-
-public loadAppointments() {
-  return new Promise((resolve, reject) => {
-      this.jsOnFhir.search('Appointment').then((result) => {
           if (result) {
-              const appointments = result.entry?.map(
-                  (entry) => entry.resource as Appointment
-              ) || [];
-              console.log('Appointments:', appointments); // Logging the appointments to the console
-              resolve(appointments);
+            const appointments =
+              result.entry?.map((entry) => entry.resource as Appointment) || [];
+            console.log('Appointments:', appointments); // Logging the appointments to the console
+            resolve(appointments);
           } else {
-              reject('Error');
+            reject('No results found');
           }
-      }).catch((error) => reject(error));
-  });
-}
-
+        })
+        .catch((error) => reject(error));
+    });
+  }
 
   /**
    * Gets the patient resource from the fhir endpoint.
@@ -102,7 +101,7 @@ public loadAppointments() {
     });
   }
 
-  public createObservation(){
-    console.log('Creating...')
+  public createObservation() {
+    console.log('Creating...');
   }
 }

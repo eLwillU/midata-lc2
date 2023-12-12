@@ -1,6 +1,5 @@
 <template>
-
-<q-btn-group push spread toggle>
+  <q-btn-group push spread toggle>
     <q-btn label="Mo" @click="currentDay = 'Montag'"></q-btn>
     <q-btn label="Di" @click="currentDay = 'Dienstag'"></q-btn>
     <q-btn label="Mi" @click="currentDay = 'Mittwoch'"></q-btn>
@@ -8,92 +7,87 @@
     <q-btn label="Fr" @click="currentDay = 'Freitag'"></q-btn>
 
     <q-btn-dropdown auto-close rounded color="primary" label="Three" split>
-        <!-- dropdown content goes here -->
-        <q-list padding style="width: 250px">
-          <q-item clickable>
-            <q-item-section avatar>
-              <q-avatar icon="folder" color="purple" text-color="white" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Photos</q-item-label>
-              <q-item-label caption>February 22, 2016</q-item-label>
-            </q-item-section>
-            <q-item-section side>
-              <q-icon name="info" color="amber" />
-            </q-item-section>
-          </q-item>
+      <!-- dropdown content goes here -->
+      <q-list padding style="width: 250px">
+        <q-item clickable>
+          <q-item-section avatar>
+            <q-avatar icon="folder" color="purple" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Photos</q-item-label>
+            <q-item-label caption>February 22, 2016</q-item-label>
+          </q-item-section>
+          <q-item-section side>
+            <q-icon name="info" color="amber" />
+          </q-item-section>
+        </q-item>
 
-          <q-item clickable>
-            <q-item-section avatar>
-              <q-avatar icon="folder" color="purple" text-color="white" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Videos</q-item-label>
-              <q-item-label caption>London</q-item-label>
-            </q-item-section>
-            <q-item-section side>
-              <q-icon name="info" color="amber" />
-            </q-item-section>
-          </q-item>
+        <q-item clickable>
+          <q-item-section avatar>
+            <q-avatar icon="folder" color="purple" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Videos</q-item-label>
+            <q-item-label caption>London</q-item-label>
+          </q-item-section>
+          <q-item-section side>
+            <q-icon name="info" color="amber" />
+          </q-item-section>
+        </q-item>
 
-          <q-separator inset />
-          <q-item-label header>Files</q-item-label>
+        <q-separator inset />
+        <q-item-label header>Files</q-item-label>
 
-          <q-item clickable>
-            <q-item-section avatar>
-              <q-avatar icon="assignment" color="teal" text-color="white" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>London</q-item-label>
-              <q-item-label caption>March 1st, 2018</q-item-label>
-            </q-item-section>
-            <q-item-section side>
-              <q-icon name="info" color="amber" />
-            </q-item-section>
-          </q-item>
+        <q-item clickable>
+          <q-item-section avatar>
+            <q-avatar icon="assignment" color="teal" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>London</q-item-label>
+            <q-item-label caption>March 1st, 2018</q-item-label>
+          </q-item-section>
+          <q-item-section side>
+            <q-icon name="info" color="amber" />
+          </q-item-section>
+        </q-item>
 
-          <q-item clickable>
-            <q-item-section avatar>
-              <q-avatar icon="assignment" color="teal" text-color="white" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Paris</q-item-label>
-              <q-item-label caption>January 22nd, 2017</q-item-label>
-            </q-item-section>
-            <q-item-section side>
-              <q-icon name="info" color="amber" />
-            </q-item-section>
-          </q-item>
-        </q-list>
-      </q-btn-dropdown>
+        <q-item clickable>
+          <q-item-section avatar>
+            <q-avatar icon="assignment" color="teal" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Paris</q-item-label>
+            <q-item-label caption>January 22nd, 2017</q-item-label>
+          </q-item-section>
+          <q-item-section side>
+            <q-icon name="info" color="amber" />
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-btn-dropdown>
   </q-btn-group>
 
   <q-separator></q-separator>
-  <div>{{ currentDay}}</div>
-
+  <div>{{ currentDay }}</div>
 
   <div v-for="appointment in appointments" :key="appointment.id">
     {{ appointment.description }}
   </div>
-
 </template>
 
 <script setup>
-// import { midata } from 'src/boot/plugins';
 import { midata } from 'src/boot/plugins';
 import { onMounted, ref } from 'vue';
-const appointments = ref([])
+const appointments = ref([]);
 
-onMounted( async () => {
+onMounted(async () => {
   try {
-        const loadedAppointments = await midata.loadAppointments();
-        appointments.value = loadedAppointments;
-    } catch (error) {
-        console.error('Error loading appointments:', error);
-    }
+    const loadedAppointments = await midata.loadAppointments();
+    appointments.value = loadedAppointments;
+  } catch (error) {
+    console.error('Error loading appointments:', error);
+  }
 });
-
-
 
 const currentDay = ref('Montag');
 </script>
