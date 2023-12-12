@@ -1,29 +1,25 @@
 <template>
-  <div v-for="appointment in appointments" :key="appointment">
+  <div>
     <AppointmentCardComponent
+      v-for="appointment in appointments"
+      :key="appointment.id"
       :title="appointment.description"
-      location="N321"
+      :timeFrom="appointment.start"
+      :timeTo="appointment.end"
     ></AppointmentCardComponent>
   </div>
 </template>
 
 <script setup>
-import AppointmentCardComponent from 'src/components/AppointmentCardComponent.vue';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { midata } from 'src/boot/plugins';
-let appointments = [];
+import AppointmentCardComponent from 'src/components/AppointmentCardComponent.vue';
+const appointments = ref([]);
 
 onMounted(async () => {
   try {
-    console.log('Getting item');
     const loadedAppointments = await midata.loadAppointments();
     appointments.value = loadedAppointments;
-    console.log('Index 0', appointments.value[0]);
-    console.log('Index 1', appointments.value[1]);
-
-    for (let appointment of appointments.value) {
-      console.log('Descr: ', appointment.description);
-    }
   } catch (error) {
     console.error('Error loading appointments:', error);
   }
