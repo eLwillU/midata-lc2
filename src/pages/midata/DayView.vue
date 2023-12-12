@@ -1,40 +1,29 @@
 <template>
-  <div class="q-pa-md">
-    <!-- Verwendung der DateDisplayCard Komponente -->
-    <!-- Verwendung der GreetingCard Komponente mit dynamischem Text -->
-    <greetings-card :name="user.name" :message="todaysMessage" />
-    <date-display-card :current-date="currentDate" class="q-mb-lg" />
-    <appointment-card></appointment-card>
-</div>
+  <div v-for="(appointment, index) in appointments" :key="index">
+    <AppointmentCardComponent
+      :time="appointment.time"
+      :location="appointment.location"
+    ></AppointmentCardComponent>
+  </div>
 </template>
 
-<script>
-import { ref } from 'vue';
-import DateDisplayCard from 'src/components/DateDisplayCard.vue';
-import GreetingsCard from 'src/components/GreetingsCard.vue';
-import AppointmentCard from 'src/components/AppointmentCard'
+<script setup>
+import AppointmentCardComponent from 'src/components/AppointmentCardComponent.vue';
 
-export default {
-  components: {
-    GreetingsCard, // Komponente registrieren
-    DateDisplayCard,
-    AppointmentCard
+const appointments = [
+  {
+    time: '08:00 - 12:00',
+    location: 'N321',
   },
-  setup() {
-    const currentDate = ref(new Date());
-    const user = ref({
-      name: 'Max Mustermann',
-    });
-    const todaysMessage = ref('heute');
-
-    // Stellen Sie alle reaktiven Referenzen und Methoden zur Verfügung, die im Template verwendet werden
-    return { currentDate, user, todaysMessage };
+  {
+    time: '12:00 - 13:00',
+    location: 'N311',
   },
-};
+  {
+    time: '15:00 - 16:00',
+    location: 'N123',
+  },
+];
 </script>
 
-<style>
-.my-card {
-  border-radius: 8px;
-}
-</style>
+<style></style>
