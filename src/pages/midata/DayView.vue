@@ -1,4 +1,6 @@
 <template>
+  <DaySelector></DaySelector>
+
   <div>
     <AppointmentCardComponent
       v-for="appointment in appointments"
@@ -15,6 +17,7 @@
 import { onMounted, ref } from 'vue';
 import { midata } from 'src/boot/plugins';
 import AppointmentCardComponent from 'src/components/AppointmentCardComponent.vue';
+import DaySelector from 'src/components/DaySelector.vue';
 const appointments = ref([]);
 
 onMounted(async () => {
