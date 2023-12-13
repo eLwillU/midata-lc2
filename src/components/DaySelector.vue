@@ -22,6 +22,9 @@ const currentDay = ref(new Date().toLocaleDateString());
 const previousDay = ref(new Date().toLocaleDateString());
 const nextDay = ref(new Date().toLocaleDateString());
 const countDays = ref(0);
+
+setDays();
+
 function setDays() {
   const baseDate = new Date();
 
@@ -35,11 +38,6 @@ function setDays() {
   previousDay.value = new Date(
     baseDate.setDate(baseDate.getDate() - 2),
   ).toLocaleDateString();
-
-  // Logging if needed
-  console.log('current day:', currentDay.value);
-  console.log('next day:', nextDay.value);
-  console.log('prev day:', previousDay.value);
 }
 
 function addDay() {
@@ -53,8 +51,4 @@ function removeDay() {
   console.log(countDays);
   setDays();
 }
-
-setDays();
-//const previousDay = new Date(currentDay.getDate() - 1);
-//const nextDay = new Date(currentDay.getDate() + 1);
 </script>
