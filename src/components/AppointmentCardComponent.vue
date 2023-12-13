@@ -21,26 +21,33 @@
           round
           icon="info"
           color="blue-6"
-          @click="alert = true"
+          @click="popup = true"
           size="xs"
         ></q-btn
       ></q-card-section>
     </q-card-section>
   </q-card>
 
-  <q-dialog v-model="alert">
+  <q-dialog v-model="popup">
     <q-card>
       <q-card-section>
-        <div class="text-h6">Alert</div>
+        <div class="text-h6">{{ props.title }}</div>
       </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-        repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
-        perferendis totam, ea at omnis vel numquam exercitationem aut, natus
-        minima, porro labore.
+      <q-card-section class="q-pt-none" horizontal="">
+        <q-card-section>
+          <span class="text-subtitle1 text-weight-bold">Zeit: </span> <br />
+          <q-icon name="schedule" /> {{ fromTime }} - {{ toTime }}
+        </q-card-section>
+        <q-card-section>
+          <span class="text-subtitle1 text-weight-bold">Ort: </span><br />
+          <q-icon name="location_on" /> {{ props.location }}
+        </q-card-section>
       </q-card-section>
-
+      <q-card-section>
+        <span class="text-subtitle1 text-weight-bold">Beschreibung: </span
+        ><br />
+        <div></div>
+      </q-card-section>
       <q-card-actions>
         <q-btn flat label="OK" color="primary" v-close-popup />
       </q-card-actions>
@@ -63,7 +70,7 @@ var toDate = new Date(props.toDateProp);
 const fromTime = formatTime(fromDate);
 const toTime = formatTime(toDate);
 
-const alert = ref(false);
+const popup = ref(false);
 
 formatTime(fromDate);
 formatTime(toDate);
