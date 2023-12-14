@@ -3,10 +3,10 @@
   "type": "collection",
   "entry": [
     {
-      "resource": {
+            "resource": {
         "resourceType": "Appointment",
-        "status": "booked",
-        "participant": [
+                "status": "booked",
+                "participant": [
           {
             "type": [
               {
@@ -53,9 +53,15 @@
 
     },
     {
+      "fullUrl": "http://example.com/fhir/Appointment/Appointment2",
       "resource": {
         "resourceType": "Appointment",
+        "id": "Appointment2",
         "status": "booked",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ärztliche Gruppentherapie - Appointment2</div>"
+        },
         "participant": [
           {
             "type": [
@@ -101,9 +107,15 @@
       }
     },
     {
+      "fullUrl": "http://example.com/fhir/Appointment/Appointment3",
       "resource": {
         "resourceType": "Appointment",
+        "id": "Appointment3",
         "status": "booked",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ärztliche Gruppentherapie - Appointment3</div>"
+        },
         "participant": [
           {
             "type": [
