@@ -1,19 +1,28 @@
 <template>
-  <div class="row wrap justify-evenly items-start content-start q-mb-sm">
-    <q-btn @click="addDay"
-      ><q-icon name="arrow_back_ios" size="xs" />{{ previousDay }}</q-btn
+  <div class="row justify-evenly items-center q-mb-sm">
+    <q-btn @click="addDay" class="q-px-sm">
+      <q-icon name="arrow_back" size="xs" />
+    </q-btn>
+    <q-btn>Heute</q-btn>
+    <q-input
+      v-model="text"
+      :dense="dense"
+      :placeholder="currentDay"
+      class="col-5"
     >
+      <template v-slot:prepend>
+        <q-icon name="event" />
+      </template>
+    </q-input>
 
-    <q-btn @click="removeDay">
-      {{ nextDay }}<q-icon name="arrow_forward_ios" size="xs"
+    <q-btn @click="removeDay" class="q-px-sm">
+      <q-icon name="arrow_forward" size="xs"
     /></q-btn>
   </div>
 
   <div
     class="text-h6 row wrap justify-evenly items-start content-start q-mb-sm"
-  >
-    Termine vom: {{ currentDay }}
-  </div>
+  ></div>
 </template>
 <script setup>
 import { ref } from 'vue';
