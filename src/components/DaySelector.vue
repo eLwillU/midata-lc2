@@ -9,6 +9,8 @@
       :dense="dense"
       :placeholder="currentDay"
       class="col-5"
+      standout
+      disable
     >
       <template v-slot:prepend>
         <q-icon name="event" />
@@ -24,6 +26,7 @@
     class="text-h6 row wrap justify-evenly items-start content-start q-mb-sm"
   ></div>
 </template>
+
 <script setup>
 import { ref } from 'vue';
 
