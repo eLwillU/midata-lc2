@@ -12,7 +12,6 @@
       <q-icon name="arrow_forward" size="xs"
     /></q-btn>
   </div>
-
   <div
     class="text-h6 row wrap justify-evenly items-start content-start q-mb-sm"
   ></div>
