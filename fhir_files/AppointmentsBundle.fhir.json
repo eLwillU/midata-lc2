@@ -3,10 +3,10 @@
   "type": "collection",
   "entry": [
     {
-            "resource": {
+      "resource": {
         "resourceType": "Appointment",
-                "status": "booked",
-                "participant": [
+        "status": "booked",
+        "participant": [
           {
             "type": [
               {
@@ -49,8 +49,6 @@
         ],
         "description": "Ärztliche Gruppentherapie"
       }
-
-
     },
     {
       "fullUrl": "http://example.com/fhir/Appointment/Appointment2",
