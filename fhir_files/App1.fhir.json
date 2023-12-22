@@ -35,7 +35,7 @@
         ]
       }
     ],
-    "versionId": "1701726181706",
+    "versionId": "1703064881198",
     "lastUpdated": "2023-12-04T22:43:01.706+01:00"
   },
   "status": "booked",
@@ -90,7 +90,7 @@
       "status": "accepted",
       "actor": {
         "type": "Location",
-        "identifier": { "value": "N321" }
+        "identifier": { "value": "N3212321321321" }
       }
     }
   ]
