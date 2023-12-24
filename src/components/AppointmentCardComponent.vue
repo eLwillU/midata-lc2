@@ -1,5 +1,5 @@
 <template>
-  <q-card class="bg-blue-1 q-mb-sm" bordered>
+  <q-card :class="[color, 'q-mb-sm']" bordered>
     <q-card-section horizontal>
       <q-card-section class="col-10">
         <div>
@@ -62,8 +62,10 @@ const props = defineProps({
   fromDateProp: String,
   toDateProp: String,
   location: String,
+  coding: Object,
 });
 
+const color = 'bg-blue-1';
 var fromDate = new Date(props.fromDateProp);
 var toDate = new Date(props.toDateProp);
 
@@ -78,8 +80,6 @@ formatTime(toDate);
 function formatTime(date) {
   const DateHours = (date.getHours() < 10 ? '0' : '') + date.getHours();
   const DateMins = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
-
-  // You can return the formatted time as per your requirement
   return DateHours + ':' + DateMins;
 }
 </script>

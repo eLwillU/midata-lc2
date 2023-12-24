@@ -7,6 +7,7 @@
       :title="appointment.description"
       :fromDateProp="appointment.start"
       :toDateProp="appointment.end"
+      :coding="appointment.appointmentType.coding[0]"
       location="N123"
     ></AppointmentCardComponent>
   </div>
@@ -35,6 +36,7 @@ function logDates() {
     tempString = a.start;
     console.log('Reeeee', new Date(tempString));
     console.log(a.start);
+    console.log('Type', a.appointmentType.coding[0]);
   });
 }
 //TODO: Add Location to FHIR Resource!!

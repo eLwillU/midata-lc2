@@ -1,16 +1,16 @@
 <template>
   <div class="row justify-evenly items-center q-mb-sm">
-    <q-btn @click="removeDay" class="q-px-sm">
-      <q-icon name="arrow_back" size="xs" />
-    </q-btn>
-    <q-btn @click="setToday">Heute</q-btn>
-
-    <q-btn color="grey-7" outline class="row justify-evenly"
-      ><q-icon name="event" />{{ currentDay }}</q-btn
+    <q-btn color="grey-7" outline class="row justify-evenly q-mx-none"
+      ><q-icon name="event" class="q-pr-sm" />{{ currentDay }}</q-btn
     >
-    <q-btn @click="addDay" class="q-px-sm">
-      <q-icon name="arrow_forward" size="xs"
-    /></q-btn>
+    <q-btn @click="removeDay" flat class="q-px-xs">
+      <q-icon name="arrow_back_ios_new" size="xs" />
+    </q-btn>
+    <q-btn @click="setToday" flat class="q-px-sm">Heute</q-btn>
+
+    <q-btn @click="addDay" flat class="q-px-xs">
+      <q-icon name="arrow_forward_ios" size="xs" />
+    </q-btn>
   </div>
   <div
     class="text-h6 row wrap justify-evenly items-start content-start q-mb-sm"

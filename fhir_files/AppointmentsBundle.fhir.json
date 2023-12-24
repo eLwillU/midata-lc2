@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "type": "collection",
+  "type": "transaction",
   "entry": [
     {
       "resource": {
@@ -35,6 +35,15 @@
         "start": "2023-11-28T10:00:00+01:00",
         "end": "2023-11-28T12:00:00+01:00",
         "minutesDuration": 120,
+        "appointmentType": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "76168009",
+              "display": "Group psychotherapy"
+            }
+          ]
+        },
         "serviceCategory": [
           {
             "coding": [
@@ -48,6 +57,10 @@
           }
         ],
         "description": "Ärztliche Gruppentherapie"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Appointment"
       }
     },
     {
@@ -89,6 +102,15 @@
         "start": "2023-11-28T14:00:00+01:00",
         "end": "2023-11-28T15:00:00+01:00",
         "minutesDuration": 60,
+        "appointmentType": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "76168009",
+              "display": "Group psychotherapy"
+            }
+          ]
+        },
         "serviceCategory": [
           {
             "coding": [
@@ -102,6 +124,10 @@
           }
         ],
         "description": "Einzelgespräch"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Appointment"
       }
     },
     {
@@ -143,12 +169,25 @@
         "start": "2023-11-28T18:00:00+01:00",
         "end": "2023-11-28T19:00:00+01:00",
         "minutesDuration": 60,
+        "appointmentType": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "76168009",
+              "display": "Group psychotherapy"
+            }
+          ]
+        },
         "serviceCategory": [
           {
             "text": "Abendessen"
           }
         ],
         "description": "Abendessen"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Appointment"
       }
     }
   ]
