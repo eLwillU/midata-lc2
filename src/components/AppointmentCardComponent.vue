@@ -1,5 +1,5 @@
 <template>
-  <q-card :class="[color, 'q-mb-sm']" bordered>
+  <q-card :class="['q-mb-sm', color]" bordered>
     <q-card-section horizontal>
       <q-card-section class="col-10">
         <div>
@@ -15,7 +15,6 @@
           </div>
         </div>
       </q-card-section>
-
       <q-card-section
         ><q-btn
           round
@@ -65,21 +64,32 @@ const props = defineProps({
   coding: Object,
 });
 
-const color = 'bg-blue-1';
-var fromDate = new Date(props.fromDateProp);
-var toDate = new Date(props.toDateProp);
-
+const fromDate = new Date(props.fromDateProp);
+const toDate = new Date(props.toDateProp);
 const fromTime = formatTime(fromDate);
 const toTime = formatTime(toDate);
-
 const popup = ref(false);
+var color = '';
 
-formatTime(fromDate);
-formatTime(toDate);
+init();
+
+function init() {
+  formatTime(fromDate);
+  formatTime(toDate);
+  setColors();
+}
 
 function formatTime(date) {
   const DateHours = (date.getHours() < 10 ? '0' : '') + date.getHours();
   const DateMins = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
   return DateHours + ':' + DateMins;
+}
+
+function setColors() {
+  if (props.coding.code === '76168009') {
+    color = 'bg-blue-3';
+  } else if (props.coding.code === '75516001') {
+    color = 'bg-grey-4';
+  }
 }
 </script>

@@ -24,21 +24,11 @@ onMounted(async () => {
   try {
     const loadedAppointments = await midata.loadAppointments();
     appointments.value = loadedAppointments;
-    logDates();
   } catch (error) {
     console.error('Error loading appointments:', error);
   }
 });
 
-function logDates() {
-  appointments.value.forEach((a) => {
-    var tempString = '';
-    tempString = a.start;
-    console.log('Reeeee', new Date(tempString));
-    console.log(a.start);
-    console.log('Type', a.appointmentType.coding[0]);
-  });
-}
 //TODO: Add Location to FHIR Resource!!
 </script>
 
