@@ -1,13 +1,12 @@
 <template>
   <div>
-    <q-table
-      title="Wochenplan"
-      :columns="columns"
-      :rows="rows"
-      :row-key="name"
-    ></q-table>
-
-    <q-calendar></q-calendar>
+    <q-calendar
+      :interval-minutes="15"
+      :interval-count="62"
+      :interval-height="15"
+      :interval-start="27"
+      :hour24-format="true"
+    ></q-calendar>
     <!-- Your component's template code here -->
   </div>
 </template>
@@ -101,6 +100,8 @@ const rows = [
   },
 ];
 
+console.log(columns);
+console.log(rows);
 // Your component's script code here
 </script>
 
