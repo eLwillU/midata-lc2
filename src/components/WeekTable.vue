@@ -1,19 +1,31 @@
 <template>
   <div>
-    <q-calendar
-      :interval-minutes="15"
-      :interval-count="62"
-      :interval-height="15"
-      :interval-start="27"
-      :hour24-format="true"
-    ></q-calendar>
+    <q-table :rows="rows" :columns="columns" row-key="name">
+      <template v-slot:body-cell="props">
+        <q-td :props="props">
+          <q-btn
+            flat
+            label="Click me"
+            @click="handleButtonClick(props.row, props.col)"
+          ></q-btn>
+        </q-td>
+      </template>
+    </q-table>
+
     <!-- Your component's template code here -->
   </div>
 </template>
 
 <script setup>
-// import { ref } from 'vue'
-
+const events = [
+  {
+    name: 'Event 1',
+    start: '2023-12-26T09:00:00',
+    end: '2023-12-26T10:00:00',
+    color: 'blue',
+  },
+  // other events...
+];
 const columns = [
   {
     name: 'time',
@@ -102,6 +114,7 @@ const rows = [
 
 console.log(columns);
 console.log(rows);
+console.log(events);
 // Your component's script code here
 </script>
 
