@@ -1,18 +1,29 @@
 <template>
   <div>
-    <q-table :rows="rows" :columns="columns" row-key="name">
-      <template v-slot:body-cell="props">
-        <q-td :props="props">
-          <q-btn
-            flat
-            label="Click me"
-            @click="handleButtonClick(props.row, props.col)"
-          ></q-btn>
-        </q-td>
-      </template>
-    </q-table>
-
-    <!-- Your component's template code here -->
+    <q-markup-table separator="cell"
+      ><thead>
+        <tr>
+          <th class="text-left">Zeit</th>
+          <th class="text-right">Montag</th>
+          <th class="text-right">Dienstag</th>
+          <th class="text-right">Mittwoch</th>
+          <th class="text-right">Donnerstag</th>
+          <th class="text-right">Freitag</th>
+          <th class="text-right">Samstag</th>
+          <th class="text-right">Sonntag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">L1 Name</td>
+          <td rowspan="2">L2 Name A</td>
+          <td>L3 Name A</td>
+        </tr>
+        <tr>
+          <td>L2 Name B</td>
+        </tr>
+      </tbody>
+    </q-markup-table>
   </div>
 </template>
 
