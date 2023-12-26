@@ -1,3 +1,7 @@
-<template>Hello World</template>
+<template>
+  <WeekTable></WeekTable>
+</template>
 
-<script setup></script>
+<script setup>
+import WeekTable from 'components/WeekTable.vue';
+</script>
