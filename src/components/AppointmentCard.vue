@@ -1,27 +1,25 @@
 <template>
   <q-table
-  flat
-  bordered
-  grid
-  title="Wochenplan"
-  :rows="rows"
-  :columns="columns"
-  row-key="time"
-  :separator="separator"
-  :rows-per-page-options="[1, 3, 5, 7, 10, 15, 20, 25, 50, 0]"
->
-  <template v-slot:body-cell-monday="props">
-    <q-td :props="props" :style="getCellStyle(props)">
-      {{ props.row.monday }}
-    </q-td>
-  </template>
-</q-table>
+    flat
+    bordered
+    grid
+    title="Wochenplan"
+    :rows="rows"
+    :columns="columns"
+    row-key="time"
+    :separator="separator"
+    :rows-per-page-options="[1, 3, 5, 7, 10, 15, 20, 25, 50, 0]"
+  >
+    <template v-slot:body-cell-monday="props">
+      <q-td :props="props" :style="getCellStyle(props)">
+        {{ props.row.monday }}
+      </q-td>
+    </template>
+  </q-table>
 </template>
 
 <script setup>
-
-
-import {ref } from 'vue'
+import { ref } from 'vue';
 
 const columns = ref([
   {
@@ -89,8 +87,4 @@ const rows = ref([
     color: 'green',
   },
 ]);
-
-
-
-
 </script>
