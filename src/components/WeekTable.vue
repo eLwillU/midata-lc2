@@ -1,20 +1,42 @@
 <template>
   <div>
-    <q-table
-      title="Wochenplan"
-      :columns="columns"
-      :rows="rows"
-      :row-key="name"
-    ></q-table>
-
-    <q-calendar></q-calendar>
-    <!-- Your component's template code here -->
+    <q-markup-table separator="cell"
+      ><thead>
+        <tr>
+          <th class="text-left">Zeit</th>
+          <th class="text-right">Montag</th>
+          <th class="text-right">Dienstag</th>
+          <th class="text-right">Mittwoch</th>
+          <th class="text-right">Donnerstag</th>
+          <th class="text-right">Freitag</th>
+          <th class="text-right">Samstag</th>
+          <th class="text-right">Sonntag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">L1 Name</td>
+          <td rowspan="2">L2 Name A</td>
+          <td>L3 Name A</td>
+        </tr>
+        <tr>
+          <td>L2 Name B</td>
+        </tr>
+      </tbody>
+    </q-markup-table>
   </div>
 </template>
 
 <script setup>
-// import { ref } from 'vue'
-
+const events = [
+  {
+    name: 'Event 1',
+    start: '2023-12-26T09:00:00',
+    end: '2023-12-26T10:00:00',
+    color: 'blue',
+  },
+  // other events...
+];
 const columns = [
   {
     name: 'time',
@@ -101,6 +123,9 @@ const rows = [
   },
 ];
 
+console.log(columns);
+console.log(rows);
+console.log(events);
 // Your component's script code here
 </script>
 
