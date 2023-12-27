@@ -4,7 +4,7 @@
         "fileMatch": [
             "*.fhir.json"
         ],
-        "url": "./fhir_files/fhir.schema.json"
+        "url": "./jsonFiles/fhir.schema.json"
     }
   ]
 }
