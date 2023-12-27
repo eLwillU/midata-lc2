@@ -1,9 +1,7 @@
 {
   "resourceType": "Questionnaire",
-  "id": "zupaz",
-  "title": "Zürcher Fragebogen zur Patientenzufriedenheit in der psychiatrischen Klinik",
+  "title": "Züpaz V1",
   "status": "active",
-  "date": "2023-12-26",
   "item": [
     {
       "linkId": "Alter",
@@ -96,10 +94,10 @@
       "text": "Hat Ihr Zimmer Ihren Ansprüchen genügt?",
       "type": "choice",
       "answerOption": [
-        { "valueString": "Ganz und gar nicht", "valueInteger": 1 },
-        { "valueString": "Eher nicht", "valueInteger": 2 },
-        { "valueString": "Einigermassen", "valueInteger": 3 },
-        { "valueString": "Vollkommen", "valueInteger": 4 }
+        { "valueCoding": { "code": "1", "display": "Ganz und gar nicht" } },
+        { "valueCoding": { "code": "2", "display": "Eher nicht" } },
+        { "valueCoding": { "code": "3", "display": "Einigermassen" } },
+        { "valueCoding": { "code": "4", "display": "Vollkommen" } }
       ]
     },
     {
