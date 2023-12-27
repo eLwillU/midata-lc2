@@ -1,5 +1,5 @@
 import { JSOnFhir } from '@i4mi/js-on-fhir';
-import { Appointment, Patient } from '@i4mi/fhir_r4';
+import { Appointment, Patient, Questionnaire } from '@i4mi/fhir_r4';
 
 export default class MidataService {
   jsOnFhir: JSOnFhir;
@@ -72,8 +72,25 @@ export default class MidataService {
           if (result) {
             const appointments =
               result.entry?.map((entry) => entry.resource as Appointment) || [];
-            console.log('Appointments:', appointments); // Logging the appointments to the console
             resolve(appointments);
+          } else {
+            reject('No results found');
+          }
+        })
+        .catch((error) => reject(error));
+    });
+  }
+
+  public loadQuestionnaire() {
+    return new Promise((resolve, reject) => {
+      this.jsOnFhir
+        .search('Questionnaire')
+        .then((result) => {
+          if (result) {
+            const questionnaires =
+              result.entry?.map((entry) => entry.resource as Questionnaire) ||
+              [];
+            resolve(questionnaires);
           } else {
             reject('No results found');
           }

@@ -1,81 +1,17 @@
 {
   "resourceType": "Questionnaire",
-  "title": "Züpaz V1",
+  "title": "Züpaz V2",
   "status": "active",
   "item": [
     {
-      "linkId": "Alter",
-      "text": "Welcher Altersgruppe gehören Sie an?",
+      "linkId": "3",
+      "text": "Hat Ihr Zimmer Ihren Ansprüchen genügt?",
       "type": "choice",
       "answerOption": [
-        { "valueString": "10 - 19 Jahre" },
-        { "valueString": "20 - 29 Jahre" },
-        { "valueString": "30 - 39 Jahre" },
-        { "valueString": "40 - 49 Jahre" },
-        { "valueString": "50 - 59 Jahre" },
-        { "valueString": "60 - 69 Jahre" },
-        { "valueString": "70 - 79 Jahre" },
-        { "valueString": "80 - 89 Jahre" },
-        { "valueString": "90 Jahre und älter" }
-      ]
-    },
-    {
-      "linkId": "Geschlecht",
-      "text": "Welches Geschlecht haben Sie?",
-      "type": "choice",
-      "answerOption": [
-        { "valueString": "Weiblich" },
-        { "valueString": "Männlich" }
-      ]
-    },
-    {
-      "linkId": "Versicherung",
-      "text": "Wie sind Sie versichert?",
-      "type": "choice",
-      "answerOption": [
-        { "valueString": "Allgemein" },
-        { "valueString": "Halbprivat" },
-        { "valueString": "Privat" }
-      ]
-    },
-    {
-      "linkId": "Eintrittsgrund",
-      "text": "Wie sind Sie eingetreten?",
-      "type": "choice",
-      "answerOption": [
-        { "valueString": "Mit meiner Zustimmung" },
-        { "valueString": "Gegen meinen Willen" }
-      ]
-    },
-    {
-      "linkId": "1",
-      "text": "Wurden Sie beim Eintritt über alles Wichtige informiert?",
-      "type": "choice",
-      "answerOption": [
-        {
-          "valueCoding": {
-            "code": "4",
-            "display": "Voll und ganz"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "3",
-            "display": "Einigermassen"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "2",
-            "display": "Eher nicht"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "1",
-            "display": "Gar nicht"
-          }
-        }
+        { "valueCoding": { "code": "1", "display": "Ganz und gar nicht" } },
+        { "valueCoding": { "code": "2", "display": "Eher nicht" } },
+        { "valueCoding": { "code": "3", "display": "Einigermassen" } },
+        { "valueCoding": { "code": "4", "display": "Vollkommen" } }
       ]
     }
   ]
