@@ -8,6 +8,8 @@
           :val="option.valueString || option.valueCoding.display"
           v-model="selected"
           class="text-subtitle2"
+          checked-icon="task_alt"
+          unchecked-icon="panorama_fish_eye"
         ></q-radio>
       </template>
     </template>

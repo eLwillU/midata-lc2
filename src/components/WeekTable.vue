@@ -15,11 +15,12 @@
       </thead>
       <tbody>
         <tr>
-          <td rowspan="2">L1 Name</td>
+          <td rowspan="4">L1 Name</td>
           <td rowspan="2">L2 Name A</td>
           <td>L3 Name A</td>
         </tr>
         <tr>
+          <td>L2 Name B</td>
           <td>L2 Name B</td>
         </tr>
       </tbody>
