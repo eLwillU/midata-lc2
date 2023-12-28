@@ -1,9 +1,13 @@
 <template>
-  <div v-if="loaded">
+  <div v-if="loaded && display">
     <template v-for="item in selectedQuestionnaire.item" :key="item.linkId">
       <QuestionItem :question="item" v-model="item.selected"></QuestionItem>
     </template>
-    <button @click="evaluateSelectedValues">Evaluate Selected Values</button>
+    <q-btn @click="evaluateSelectedValues">Evaluate Selected Values</q-btn>
+  </div>
+
+  <div v-if="!display">
+    <q-card>Danke für Ihre Zeit!</q-card>
   </div>
 </template>
 
@@ -14,6 +18,7 @@ import QuestionItem from 'src/components/QuestionItem.vue';
 
 const selectedQuestionnaire = ref(null);
 const loaded = ref(false);
+const display = ref(true);
 
 async function load() {
   try {
@@ -34,7 +39,7 @@ function evaluateSelectedValues() {
     (item) => item.selected,
   );
   console.log('Selected values:', selectedValues);
-  // Perform further evaluation or processing with the selected values
+  display.value = false;
 }
 </script>
 
