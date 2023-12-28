@@ -80,6 +80,30 @@ export default class MidataService {
         .catch((error) => reject(error));
     });
   }
+  public loadQuestionnaireByTitle(title: string) {
+    return new Promise((resolve, reject) => {
+      this.jsOnFhir
+        .search('Questionnaire')
+        .then((result) => {
+          if (result) {
+            const questionnaires =
+              result.entry?.map((entry) => entry.resource as Questionnaire) ||
+              [];
+            const filteredQuestionnaire = questionnaires.find(
+              (questionnaire) => questionnaire.title === title,
+            );
+            if (filteredQuestionnaire) {
+              resolve(filteredQuestionnaire);
+            } else {
+              reject('No questionnaire found with the given title');
+            }
+          } else {
+            reject('No results found');
+          }
+        })
+        .catch((error) => reject(error));
+    });
+  }
 
   public loadQuestionnaire() {
     return new Promise((resolve, reject) => {

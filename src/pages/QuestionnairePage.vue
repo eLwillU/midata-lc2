@@ -2,7 +2,7 @@
   <div v-if="loaded">
     <template v-for="item in selectedQuestionnaire.item" :key="item.linkId">
       <div class="text-h6">{{ item.text }}</div>
-      <template v-for="option in item.answerOption" :key="option.valueString">
+      <template v-for="option in item.answerOption" :key="option">
         <q-radio
           :label="option.valueString || option.valueCoding.display"
           :val="option.valueString || option.valueCoding.display"
@@ -27,8 +27,8 @@ const loaded = ref(false);
 
 async function load() {
   try {
-    questionnaires.value = await midata.loadQuestionnaire();
-    selectedQuestionnaire = toRaw(questionnaires.value[1]);
+    questionnaires.value = await midata.loadQuestionnaireByTitle('Zupaz V4');
+    selectedQuestionnaire = toRaw(questionnaires.value);
     // "zupaz"
     console.log('Selected Q ', selectedQuestionnaire);
     loaded.value = true;
@@ -185,9 +185,7 @@ const templateQuestionnaire = {
         },
       ],
     },
-    {
-
-    }
+    {},
   ],
 };
 
