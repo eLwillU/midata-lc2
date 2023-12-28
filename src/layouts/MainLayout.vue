@@ -78,6 +78,11 @@ const midataLinksList = [
     icon: 'add_to_photos',
     link: '/midata/addAppointment',
   },
+  {
+    title: 'Fragebögen',
+    icon: 'quiz',
+    link: '/midata/questionnaire',
+  },
 ];
 </script>
 

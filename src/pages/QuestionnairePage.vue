@@ -1,4 +1,7 @@
 <template>
+  <div v-if="!$midata.isLoggedIn()">
+    <login-card></login-card>
+  </div>
   <div v-if="loaded && display">
     <template v-for="item in selectedQuestionnaire.item" :key="item.linkId">
       <QuestionItem :question="item" v-model="item.selected"></QuestionItem>
