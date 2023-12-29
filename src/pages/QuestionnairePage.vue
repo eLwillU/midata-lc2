@@ -1,6 +1,6 @@
 <template>
   <!-- q-card mit Bild und Text wird nur angezeigt, wenn display true ist -->
-  <div v-if="loaded && display" class="q-mb-md full-width">
+  <div v-if="loaded && display" class="q-mb-md">
     <q-card flat bordered>
       <img
         src="https://www.gutenachrichten.org/wp-content/uploads/schluessel-zur-zufriedenheit.jpg"
