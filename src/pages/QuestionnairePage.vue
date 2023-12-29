@@ -1,45 +1,54 @@
 <template>
   <!-- q-card mit Bild und Text wird nur angezeigt, wenn display true ist -->
-  <div v-if="loaded && display" class="q-pa-md row items-start q-gutter-md">
-    <q-card class="my-card">
-      <img src="https://www.gutenachrichten.org/wp-content/uploads/schluessel-zur-zufriedenheit.jpg">
+  <div v-if="loaded && display" class="q-mb-md full-width">
+    <q-card flat bordered>
+      <img
+        src="https://www.gutenachrichten.org/wp-content/uploads/schluessel-zur-zufriedenheit.jpg"
+      />
       <q-card-section>
-        <div class="text-h6">Zürcher Fragebogen zur Patientenzufriedenheit in der psychiatrischen Klinik</div>
-        <div class="text-subtitle2">(Züpak)</div>
+        <div class="text-h6">
+          Zürcher Fragebogen zur Patientenzufriedenheit in der psychiatrischen
+          Klinik
+        </div>
+        <div class="text-subtitle2">(Züpaz)</div>
       </q-card-section>
-      <q-card-section class="q-pt-none text-with-breaks">{{ content }}</q-card-section>
+      <q-card-section class="q-pt-none">{{ content }}</q-card-section>
     </q-card>
-  </div>
-
-  <!-- Login-Bereich wird nur angezeigt, wenn display true ist -->
-  <div v-if="!$midata.isLoggedIn() && display">
-    <login-card></login-card>
   </div>
 
   <!-- Fragebogen-Bereich wird nur angezeigt, wenn display true ist -->
   <div v-if="loaded && display">
-    <div v-for="item in selectedQuestionnaire.item" :key="item.linkId" class="q-mb-md">
+    <div
+      v-for="item in selectedQuestionnaire.item"
+      :key="item.linkId"
+      class="q-mb-sm"
+    >
       <q-card>
         <q-card-section>
           <QuestionItem :question="item" v-model="item.selected"></QuestionItem>
         </q-card-section>
       </q-card>
     </div>
-    <q-btn color="primary" @click="evaluateSelectedValues">Evaluate Selected Values</q-btn>
+    <q-btn color="primary" @click="evaluateSelectedValues"
+      >Evaluate Selected Values</q-btn
+    >
   </div>
 
- <!-- Neue q-card mit Dankesnachricht -->
- <div v-if="showThankYouCard" class="q-pa-md row items-start q-gutter-md">
-  <q-card class="my-card">
-    <img src="https://blog-cdn.everhour.com/blog/wp-content/uploads/2021/01/team-dynamics.jpg">
-    <q-card-section>
-      <div class="text-h6">Vielen Dank!</div>
-      <div class="text-subtitle2">Ihre Antworten sind sehr wertvoll für uns.</div>
-    </q-card-section>
-  </q-card>
-</div>
+  <!-- Neue q-card mit Dankesnachricht -->
+  <div v-if="showThankYouCard" class="q-mb-md">
+    <q-card class="my-card">
+      <img
+        src="https://blog-cdn.everhour.com/blog/wp-content/uploads/2021/01/team-dynamics.jpg"
+      />
+      <q-card-section>
+        <div class="text-h6">Vielen Dank!</div>
+        <div class="text-subtitle2">
+          Ihre Antworten sind sehr wertvoll für uns.
+        </div>
+      </q-card-section>
+    </q-card>
+  </div>
 </template>
-
 
 <script setup>
 import { onMounted, ref, toRaw } from 'vue';
@@ -50,11 +59,14 @@ const selectedQuestionnaire = ref(null);
 const loaded = ref(false);
 const display = ref(true);
 const showThankYouCard = ref(false);
-const content = 'Wir sind sehr daran interessiert, Ihre Meinung zu Ihrem kürzlich erfolgten Aufenthalt in unserer Klinik zu erfahren.<br>' +
-'Auf dieser und den folgenden Seiten finden Sie eine Anzahl von Fragen. Es ist ein Fragebogen, der dazu dient, Ihre Zufriedenheit mit dem Klinikaufenthalt zu erfassen. Bitte füllen Sie Ihn aus. Sie brauchen dafür ungefähr 10 Minuten.<br>' +
-'Kreuzen Sie bitte jeweils die Antwort an, die am ehesten auf Ihr Erleben beim Aufenthalt in der Psychiatrischen Klinik zutrifft. Die Umfrage ist anonym, Ihre Angaben lassen keinen Rückschluss auf Ihre Person zu.<br>' +
-'Legen Sie bitte den ausgefüllten Fragebogen in das beiliegende Couvert und geben Sie das verschlossene Couvert vor dem Austritt beim Team-Büro ab.<br><br>' +
-'Wir danken Ihnen für Ihre Mitarbeit!<br>Suchtfachklinik Zürich';
+
+const content =
+  'Wir sind sehr daran interessiert, Ihre Meinung zu Ihrem kürzlich erfolgten Aufenthalt in unserer Klinik zu erfahren. ' +
+  'Auf dieser und den folgenden Seiten finden Sie eine Anzahl von Fragen. Es ist ein Fragebogen, der dazu dient, Ihre Zufriedenheit mit dem Klinikaufenthalt zu erfassen. Bitte füllen Sie Ihn aus. Sie brauchen dafür ungefähr 10 Minuten. ' +
+  'Kreuzen Sie bitte jeweils die Antwort an, die am ehesten auf Ihr Erleben beim Aufenthalt in der Psychiatrischen Klinik zutrifft. Die Umfrage ist anonym, Ihre Angaben lassen keinen Rückschluss auf Ihre Person zu. ' +
+  'Legen Sie bitte den ausgefüllten Fragebogen in das beiliegende Couvert und geben Sie das verschlossene Couvert vor dem Austritt beim Team-Büro ab. ' +
+  'Wir danken Ihnen für Ihre Mitarbeit! ' +
+  'Suchtfachklinik Zürich';
 
 async function load() {
   try {
@@ -82,12 +94,7 @@ function evaluateSelectedValues() {
 
 <style scoped>
 /* Eigene Stile */
-.my-card {
-  width: 100%;
-}
-.text-with-breaks {
-  white-space: pre-line;
-}
+
 .q-card {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
