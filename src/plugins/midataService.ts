@@ -53,17 +53,6 @@ export default class MidataService {
     return this.jsOnFhir.handleAuthResponse();
   }
 
-  public getAppointments() {
-    this.jsOnFhir
-      .search('Appointment')
-      .then((result) => {
-        console.log('Appointment Data:', result);
-      })
-      .catch((error) => {
-        console.error('Error fetching appointments:', error);
-      });
-  }
-
   public loadAppointments() {
     return new Promise((resolve, reject) => {
       this.jsOnFhir

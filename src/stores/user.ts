@@ -24,6 +24,13 @@ export const useUserStore = defineStore('user', () => {
     false,
   );
 
+  const appointmentRessources = useSessionStorage<any>(
+    'appointmentRessources',
+    [],
+  );
+
+  const currentDay = useSessionStorage<Date>('currentDay', new Date());
+
   /**
    * Deletes all data from this store and sets the currentLanguage to 'de'.
    */
@@ -40,6 +47,7 @@ export const useUserStore = defineStore('user', () => {
   async function restoreFromMidata(): Promise<void> {
     try {
       patientResource.value = await midata.getPatientResource();
+      appointmentRessources.value = await midata.loadAppointments();
     } catch (error) {
       console.warn('Error while restoring from MIDATA: ', error);
       throw error;
@@ -94,6 +102,8 @@ export const useUserStore = defineStore('user', () => {
     patientResourceVisible,
     patientResourceExpanded,
     fullPatientName,
+    appointmentRessources,
+    currentDay,
     deleteDataInStore,
     copyToClipBoard: copyItemToClipBoard,
     restoreFromMidata,
