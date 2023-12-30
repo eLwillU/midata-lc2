@@ -34,7 +34,7 @@
     <!-- Navigationsbuttons für Weiter und Zurück -->
     <div class="row justify-between q-mt-md">
       <q-btn
-        v-if="currentPage.value > 1"
+        v-if="currentPage > 1"
         @click="previousPage"
         label="Zurück"
         color="primary"
