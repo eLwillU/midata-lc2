@@ -40,6 +40,7 @@ function updateDate(daysToAdd = 0, reset = false) {
   varDate.value = date.addToDate(varDate.value, { days: daysToAdd });
   formattedDate.value = date.formatDate(varDate.value, 'DD.MM.YYYY');
   console.log('Date changed to: ' + formattedDate.value);
+  useUserStore().setDay(varDate.value);
 }
 
 function addDay() {

@@ -97,6 +97,10 @@ export const useUserStore = defineStore('user', () => {
     }
   }
 
+  function setDay(day: Date): void {
+    currentDay.value = day;
+  }
+
   return {
     patientResource,
     patientResourceVisible,
@@ -107,5 +111,6 @@ export const useUserStore = defineStore('user', () => {
     deleteDataInStore,
     copyToClipBoard: copyItemToClipBoard,
     restoreFromMidata,
+    setDay,
   };
 });
