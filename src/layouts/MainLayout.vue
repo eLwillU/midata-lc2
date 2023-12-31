@@ -81,7 +81,7 @@ const midataLinksList = [
   {
     title: 'Fragebögen',
     icon: 'quiz',
-    link: '/midata/questionnaire',
+    link: '/midata/QuestionnairesOverview',
   },
 ];
 </script>
