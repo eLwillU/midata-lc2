@@ -62,7 +62,8 @@
       <q-card-section>
         <div class="text-h6">Der Fragebogen ist abgeschlossen!</div>
         <div class="text-subtitle2">
-          Vielen Dank für Ihre Antworten, sie sind uns äusserst wertvoll. Wir bestätigen, dass sie erfolgreich übermittelt wurden.
+          Vielen Dank für Ihre Antworten, sie sind uns äusserst wertvoll. Wir
+          bestätigen, dass sie erfolgreich übermittelt wurden.
         </div>
       </q-card-section>
       <q-card-section class="text-center">
@@ -76,6 +77,10 @@
 import { onMounted, ref, toRaw, computed } from 'vue';
 import { midata } from 'src/boot/plugins';
 import QuestionItem from 'src/components/QuestionItem.vue';
+
+const props = defineProps({
+  title: String,
+});
 
 const selectedQuestionnaire = ref(null);
 const loaded = ref(false);
@@ -92,7 +97,7 @@ const content =
 
 async function load() {
   try {
-    const questionnaires = await midata.loadQuestionnaireByTitle('Zupaz V4');
+    const questionnaires = await midata.loadQuestionnaireByTitle(props.title);
     selectedQuestionnaire.value = toRaw(questionnaires);
     loaded.value = true;
   } catch (error) {
@@ -102,7 +107,6 @@ async function load() {
 function closeThankYouCard() {
   showThankYouCard.value = false;
 }
-
 
 onMounted(() => {
   load();
@@ -147,15 +151,22 @@ const isLastPage = computed(() => {
     selectedQuestionnaire.value.item.length
   );
 });
-const totalQuestions = computed(() => selectedQuestionnaire.value ? selectedQuestionnaire.value.item.length : 0);
+const totalQuestions = computed(() =>
+  selectedQuestionnaire.value ? selectedQuestionnaire.value.item.length : 0,
+);
 const answeredQuestions = computed(() =>
-  selectedQuestionnaire.value ? selectedQuestionnaire.value.item.filter(q => q.selected).length : 0
+  selectedQuestionnaire.value
+    ? selectedQuestionnaire.value.item.filter((q) => q.selected).length
+    : 0,
 );
 
-const progressValue = computed(() => answeredQuestions.value / totalQuestions.value);
-const progressLabel = computed(() => (progressValue.value * 100).toFixed(2) + '%');
+const progressValue = computed(
+  () => answeredQuestions.value / totalQuestions.value,
+);
+const progressLabel = computed(
+  () => (progressValue.value * 100).toFixed(2) + '%',
+);
 </script>
-
 
 <style scoped>
 /* Eigene Stile */

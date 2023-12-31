@@ -113,13 +113,6 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-
-  // Always leave this as last one,
-  // but you can also remove it
-  {
-    path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorPage.vue'),
-  },
   {
     path: '/midata/questionnaire',
     component: () => import('layouts/MainLayout.vue'),
@@ -131,6 +124,14 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+
+  // Always leave this as last one,
+  // but you can also remove it
+  {
+    path: '/:catchAll(.*)*',
+    component: () => import('pages/ErrorPage.vue'),
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {

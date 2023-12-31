@@ -4,8 +4,16 @@
     <div class="text-h6">{{ question.text }}</div>
     <template v-for="option in question.answerOption" :key="option">
       <q-radio
-        :label="option.valueString || option.valueCoding.display"
-        :val="option.valueString || option.valueCoding.display"
+        :label="
+          option.valueString ||
+          option.valueCoding.display ||
+          option.valueInteger
+        "
+        :val="
+          option.valueString ||
+          option.valueCoding.display ||
+          option.valueInteger
+        "
         v-model="question.selected"
         class="text-subtitle2"
         checked-icon="task_alt"
