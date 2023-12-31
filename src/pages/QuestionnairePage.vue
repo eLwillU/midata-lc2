@@ -60,10 +60,13 @@
         src="https://blog-cdn.everhour.com/blog/wp-content/uploads/2021/01/team-dynamics.jpg"
       />
       <q-card-section>
-        <div class="text-h6">Vielen Dank!</div>
+        <div class="text-h6">Der Fragebogen ist abgeschlossen!</div>
         <div class="text-subtitle2">
-          Ihre Antworten sind sehr wertvoll für uns.
+          Vielen Dank für Ihre Antworten, sie sind uns äusserst wertvoll. Wir bestätigen, dass sie erfolgreich übermittelt wurden.
         </div>
+      </q-card-section>
+      <q-card-section class="text-center">
+        <q-btn label="Abchliessen" color="primary" @click="closeThankYouCard" />
       </q-card-section>
     </q-card>
   </div>
@@ -96,6 +99,10 @@ async function load() {
     console.error('Error loading questionnaires:', error);
   }
 }
+function closeThankYouCard() {
+  showThankYouCard.value = false;
+}
+
 
 onMounted(() => {
   load();

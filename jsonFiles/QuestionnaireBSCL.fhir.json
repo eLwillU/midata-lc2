@@ -1,0 +1,82 @@
+{
+  "resourceType": "Questionnaire",
+  "title": "BSCL V1",
+  "status": "active",
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Nervosität oder innerem Zittern",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0",
+            "display": "überhaupt nicht"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1",
+            "display": "ein wenig"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2",
+            "display": "ziemlich"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3",
+            "display": "stark"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4",
+            "display": "sehr stark"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Ohnmachts- und Schwindelgefühle",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0",
+            "display": "überhaupt nicht"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1",
+            "display": "ein wenig"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2",
+            "display": "ziemlich"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3",
+            "display": "stark"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4",
+            "display": "sehr stark"
+          }
+        }
+      ]
+    }
+  ]
+ }
+
