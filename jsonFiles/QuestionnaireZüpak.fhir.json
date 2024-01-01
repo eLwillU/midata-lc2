@@ -801,8 +801,8 @@
           }
         },
       {
-        "linkId": "23",
-        "text": "In welchem Masse hat unsere Klinik Ihren Bedürfnissen entsprochen?",
+        "linkId": "24",
+        "text": "Würden Sie wieder in unsere Klinik kommen, wenn Sie eine Hilfe bräuchten?",
         "type": "choice",
         "answerOption": [
           {
@@ -831,6 +831,7 @@
           }
         ]
       },
+
       {
         "linkId": "25",
         "text": "Würden Sie Freund/einer Freundin unsere Klinik empfehlen, wenn er/sie eine ähnliche Hilfe benötigen würde?",
