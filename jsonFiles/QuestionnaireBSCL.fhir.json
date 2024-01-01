@@ -1,5 +1,6 @@
 {
   "resourceType": "Questionnaire",
+  "id": "bscl-survey",
   "title": "BSCL V1",
   "status": "active",
   "item": [
@@ -10,32 +11,27 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "0",
-            "display": "überhaupt nicht"
+            "code": "0"
           }
         },
         {
           "valueCoding": {
-            "code": "1",
-            "display": "ein wenig"
+            "code": "1"
           }
         },
         {
           "valueCoding": {
-            "code": "2",
-            "display": "ziemlich"
+            "code": "2"
           }
         },
         {
           "valueCoding": {
-            "code": "3",
-            "display": "stark"
+            "code": "3"
           }
         },
         {
           "valueCoding": {
-            "code": "4",
-            "display": "sehr stark"
+            "code": "4"
           }
         }
       ]
@@ -47,35 +43,1754 @@
       "answerOption": [
         {
           "valueCoding": {
-            "code": "0",
-            "display": "überhaupt nicht"
+            "code": "0"
           }
         },
         {
           "valueCoding": {
-            "code": "1",
-            "display": "ein wenig"
+            "code": "1"
           }
         },
         {
           "valueCoding": {
-            "code": "2",
-            "display": "ziemlich"
+            "code": "2"
           }
         },
         {
           "valueCoding": {
-            "code": "3",
-            "display": "stark"
+            "code": "3"
           }
         },
         {
           "valueCoding": {
-            "code": "4",
-            "display": "sehr stark"
+            "code": "4"
           }
         }
       ]
-    }
-  ]
-}
+    },
+    {
+      "linkId": "3",
+      "text": "Der Idee, dass irgendjemand Macht über Ihre Gedanken hat",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "4",
+      "text": "Dem Gefühl, dass andere an den meisten Ihrer Schwierigkeiten Schuld sind",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "5",
+      "text": "Gedächtnisschwierigkeiten",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "6",
+      "text": "Dem Gefühl, leicht reizbar oder verärgerbar zu sein",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "7",
+      "text": "Herz- oder Brustschmerzen",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "8",
+      "text": "Furcht auf offenen Plätzen oder auf der Strasse",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "9",
+      "text": "Gedanken, sich das Leben zu nehmen",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "3"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "4"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "10",
+      "text": "Dem Gefühl, dass man den meisten Menschen nicht trauen kann",
+      "type": "choice",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "code": "0"
+          }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "11",
+        "text": "Schlechtem Appetit",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "12",
+        "text": "Plötzlichem Erschrecken ohne Grund",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "13",
+        "text": "Gefühlsausbrüche, denen gegenüber Sie machtlos waren",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "14",
+        "text": "Einsamkeitsgefühle, selbst wenn Sie in Gesellschaft sind",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "15",
+        "text": "Dem Gefühl, dass es Ihnen schwerfällt, etwas anzufangen",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "16",
+        "text": "Einsamkeitsgefühlen",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "17",
+        "text": "Schwermut",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "18",
+        "text": "Dem Gefühl, sich für nichts zu interessieren",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "19",
+        "text": "Furchtsamkeit",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "20",
+        "text": "Verletzlichkeit in Gefühlsdingen",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "21",
+        "text": "Dem Gefühl, dass die Leute unfreundlich sind oder Sie nicht leiden können",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "22",
+        "text": "Minderwertigkeitsgefühlen gegenüber anderen",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "4"
+            }
+          }
+        ]
+      },
+      {
+        "linkId": "23",
+        "text": "Übelkeit oder Magenverstimmung",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "0"
+            }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "24",
+          "text": "Dem Gefühl, dass andere Sie beobachten, oder über Sie reden",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "25",
+          "text": "Einschlafschwierigkeiten",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "26",
+          "text": "Dem Zwang, wieder und wieder nachzukontrollieren, was Sie tun",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "27",
+          "text": "Schwierigkeiten, sich zu entscheiden",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "28",
+          "text": "Furcht vor Fahrten in Bus, Strassenbahn, U-Bahn oder Zug",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "29",
+          "text": "Schwierigkeiten beim Atmen",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "30",
+          "text": "Hitzewallungen oder Kälteschauer",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "31",
+          "text": "Der Notwendigkeit, bestimmte Dinge, Orte oder Tätigkeiten zu meiden, weil Sie durch diese erschreckt werden",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "32",
+          "text": "Leere im Kopf",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "33",
+          "text": "Taubheit oder Kribbeln in einzelnen Körperteilen",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "34",
+          "text": "Dem Gefühl, dass Sie für Ihre Sünden bestraft werden sollen",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "4"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "35",
+          "text": "Dem Gefühl der Hoffnungslosigkeit angesichts der Zukunft",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "0"
+              }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "36",
+            "text": "Konzentrationsschwierigkeiten",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "37",
+            "text": "Schwächegefühl in einzelnen Körperteilen",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "35",
+            "text": "Dem Gefühl der Hoffnungslosigkeit angesichts der Zukunft",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "36",
+            "text": "Konzentrationsschwierigkeiten",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "37",
+            "text": "Schwächegefühl in einzelnen Körperteilen",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "38",
+            "text": "Dem Gefühl, gespannt oder aufgeregt zu sein",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "39",
+            "text": "Gedanken an den Tod und ans Sterben",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "40",
+            "text": "Dem Drang, jemanden zu schlagen, zu verletzen oder ihm Schmerz zuzufügen",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "41",
+            "text": "Dem Drang, Dinge zu zerbrechen oder zu zerschmettern",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "42",
+            "text": "Starke Befangenheit im Umgang mit anderen",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "43",
+            "text": "Abneigung gegen Menschenmengen, z.B. beim Einkaufen oder im Kino",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "44",
+            "text": "Dem Gefühl, dass Sie nicht so viel leisten wie andere Menschen in Ihrem Alter oder in Ihrer Situation",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "45",
+            "text": "Schreck- oder Panikanfälle",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "46",
+            "text": "Der Neigung, immer wieder in Erörterungen und Auseinandersetzungen zu geraten",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "1"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "2"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "3"
+                }
+              },
+              {
+                "valueCoding": {
+                  "code": "4"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "47",
+            "text": "Nervosität, wenn Sie allein gelassen werden",
+            "type": "choice",
+            "answerOption": [
+              {
+                "valueCoding": {
+                  "code": "0"
+                }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "4"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "48",
+              "text": "Mangelnde Anerkennung Ihrer Leistungen durch andere",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "4"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "49",
+              "text": "So starke Ruhelosigkeit, dass Sie nicht stillsitzen können",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "4"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "50",
+              "text": "Dem Gefühl, wertlos zu sein",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "4"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "51",
+              "text": "Dem Gefühl, dass die Leute Sie ausnutzen, wenn Sie es zulassen würden",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "4"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "52",
+              "text": "Schuldgefühlen",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "4"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "53",
+              "text": "Dem Gedanken, dass irgendetwas mit Ihrem Verstand nicht in Ordnung ist",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "0"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "1"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "2"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "3"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "4"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+
