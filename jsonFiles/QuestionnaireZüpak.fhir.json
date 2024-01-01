@@ -154,13 +154,13 @@
           {
             "valueCoding": {
               "code": "3",
-              "display": "Einigermassen"
+              "display": "Einigermassen gut"
             }
           },
           {
             "valueCoding": {
               "code": "2",
-              "display": "Eher gut schlecht"
+              "display": "Eher schlecht"
             }
           },
           {
@@ -216,13 +216,13 @@
           {
             "valueCoding": {
               "code": "3",
-              "display": "Eher gut schlecht"
+              "display": "Eher schlecht"
             }
           },
           {
             "valueCoding": {
               "code": "2",
-              "display": "Einigermassen"
+              "display": "Einigermassen gut"
             }
           },
           {
@@ -235,7 +235,7 @@
       },
       {
         "linkId": "7",
-        "text": "Wie viel Einfluss konnten Sie bei der Auswahl der Therapien nehmen?",
+        "text": "Wie viel Einfluss konnten Sie bei der Auswahl der Therapien (Arbeits-,Bewegungs-,Ergo-,Musik-,Gestalt-, Physio-,Gesprächs-, Kunsttherapie u.ä.) nehmen??",
         "type": "choice",
         "answerOption": [
           {
@@ -334,7 +334,7 @@
       },
       {
         "linkId": "10",
-        "text": "Wie wurden Sie vom therapeutischen Dienstpersonal behandelt?",
+        "text": "Wie wurden Sie vom Personal der therapeutischen Dienste (Arbeits-,Bewegungs-, Ergo-, Musik-, Gestalt-, Physio-, Gesprächs-,Kunstherapie u.ä.) behandelt?",
         "type": "choice",
         "answerOption": [
           {
@@ -346,7 +346,7 @@
           {
             "valueCoding": {
               "code": "3",
-              "display": "Einigermaßen respektvoll"
+              "display": "Einigermassen respektvoll"
             }
           },
           {
@@ -389,7 +389,7 @@
     {
       "valueCoding": {
         "code": "2",
-        "display": "Eher gut schlecht"
+        "display": "Eher schlecht"
       }
     },
     {
@@ -470,7 +470,7 @@
 },
 {
   "linkId": "14",
-  "text": "Wie wurden Ihre Angehörigen in die Behandlung einbezogen?",
+  "text": "Wie wurden Ihre Angehörigen (Eltern, FreundIn, nahe Bekannte) in die Behandlung einbezogen?",
   "type": "choice",
   "answerOption": [
     {
@@ -481,19 +481,25 @@
     },
     {
       "valueCoding": {
-        "code": "2",
+        "code": "2.5",
         "display": "Eher zu viel"
       }
     },
     {
       "valueCoding": {
-        "code": "3",
+        "code": "4",
         "display": "Genau richtig"
       }
     },
     {
       "valueCoding": {
-        "code": "4",
+        "code": "2.5",
+        "display": "Eher zu wenig"
+      }
+    },
+    {
+      "valueCoding": {
+        "code": "1",
         "display": "Viel zu wenig"
       }
     },
@@ -531,7 +537,7 @@
     {
       "valueCoding": {
         "code": "1",
-        "display": "Eindeutig ja"
+        "display": "Schlecht"
       }
     }
   ]
@@ -600,7 +606,38 @@
 },
 {
   "linkId": "18",
-  "text": "Wie zufrieden sind Sie mit dem Ausmaß der Hilfe?",
+  "text": "Wie zufrieden sind Sie mit dem Ausmass der Hilfe, welche Sie hier erhalten haben?",
+  "type": "choice",
+  "answerOption": [
+    {
+      "valueCoding": {
+        "code": "1",
+        "display": "Ziemlich unzufrieden"
+      }
+    },
+    {
+      "valueCoding": {
+        "code": "2",
+        "display": "Leicht unzufrieden"
+      }
+    },
+    {
+      "valueCoding": {
+        "code": "3",
+        "display": "Weitgehend zufrieden"
+      }
+    },
+    {
+      "valueCoding": {
+        "code": "4",
+        "display": "Sehr zufrieden"
+      }
+    }
+  ]
+},
+{
+  "linkId": "19",
+  "text": "Wie zufrieden sind Sie mit der Behandlung, die Sie erhalten haben, im Grossen und Ganzen?",
   "type": "choice",
   "answerOption": [
     {
@@ -668,31 +705,31 @@
         {
           "valueCoding": {
             "code": "4",
-            "display": "Sehr respektvoll"
+            "display": "Sehr gut"
           }
         },
         {
           "valueCoding": {
             "code": "3",
-            "display": "Einigermaßen respektvoll"
+            "display": "Ziemlich gut"
           }
         },
         {
           "valueCoding": {
             "code": "2",
-            "display": "Eher respektlos"
+            "display": "Eher schlecht"
           }
         },
         {
           "valueCoding": {
             "code": "1",
-            "display": "Sehr respektlos"
+            "display": "Sehr schlecht"
           }
         },
         {
           "valueCoding": {
             "code": "0",
-            "display": "Hatte keine solche Therapie"
+            "display": "Betrifft mich nicht"
           }
         }
       ]
@@ -704,119 +741,51 @@
       "answerOption": [
         {
           "valueCoding": {
+            "code": "1",
+            "display": "Viel zu spät"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "2.5",
+            "display": "Eher zu spät"
+          }
+        },
+        {
+          "valueCoding": {
             "code": "4",
-            "display": "Sehr respektvoll"
+            "display": "Genau richtig"
           }
         },
         {
           "valueCoding": {
-            "code": "3",
-            "display": "Einigermaßen respektvoll"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "2",
-            "display": "Eher respektlos"
+            "code": "2.5",
+            "display": "Eher zu früh"
           }
         },
         {
           "valueCoding": {
             "code": "1",
-            "display": "Sehr respektlos"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "0",
-            "display": "Hatte keine solche Therapie"
+            "display": "Viel zu früh"
           }
         }
       ]
     },
     {
       "linkId": "23",
-      "text": "In welchem Maße hat unsere Klinik Ihren Bedürfnissen entsprochen?",
+      "text": "In welchem Masse hat unsere Klinik Ihren Bedürfnissen entsprochen?",
       "type": "choice",
       "answerOption": [
         {
           "valueCoding": {
             "code": "4",
-            "display": "Sehr respektvoll"
+            "display": "Voll und ganz"
           }
         },
         {
           "valueCoding": {
             "code": "3",
-            "display": "Einigermaßen respektvoll"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "2",
-            "display": "Eher respektlos"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "1",
-            "display": "Sehr respektlos"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "0",
-            "display": "Hatte keine solche Therapie"
-          }
-        }
-      ]
-    },
-    {
-      "linkId": "24",
-      "text": "Würden Sie wieder in unsere Klinik kommen, wenn Sie eine Hilfe bräuchten?",
-      "type": "choice",
-      "answerOption": [
-        {
-          "valueCoding": {
-            "code": "4",
-            "display": "Sehr respektvoll"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "3",
-            "display": "Einigermaßen respektvoll"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "2",
-            "display": "Eher respektlos"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "1",
-            "display": "Sehr respektlos"
-          }
-        },
-        {
-          "valueCoding": {
-            "code": "0",
-            "display": "Hatte keine solche Therapie"
-          }
-        }
-      ]
-    },
-    {
-      "linkId": "25",
-      "text": "Würden Sie Freund/einer Freundin unsere Klinik empfehlen?",
-      "type": "choice",
-      "answerOption": [
-        {
-          "valueCoding": {
-            "code": "1",
-            "display": "Eindeutig nicht"
+            "display": "Weitgehend"
           }
         },
         {
@@ -827,18 +796,74 @@
         },
         {
           "valueCoding": {
-            "code": "3",
-            "display": "Eher ja"
+            "code": "1",
+            "display": "Gar nicht"
           }
         },
-        {
-          "valueCoding": {
-            "code": "4",
-            "display": "Eindeutig ja"
+      {
+        "linkId": "23",
+        "text": "In welchem Masse hat unsere Klinik Ihren Bedürfnissen entsprochen?",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "4",
+              "display": "Einndeutig ja"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3",
+              "display": "Eher ja"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2",
+              "display": "Eher nicht"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1",
+              "display": "Eindeutig nicht"
+            }
           }
-        }
+        ]
+      },
+      {
+        "linkId": "25",
+        "text": "Würden Sie Freund/einer Freundin unsere Klinik empfehlen, wenn er/sie eine ähnliche Hilfe benötigen würde?",
+        "type": "choice",
+        "answerOption": [
+          {
+            "valueCoding": {
+              "code": "4",
+              "display": "Einndeutig ja"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "3",
+              "display": "Eher ja"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "2",
+              "display": "Eher nicht"
+            }
+          },
+          {
+            "valueCoding": {
+              "code": "1",
+              "display": "Eindeutig nicht"
+            }
+          }
+        ]
+      }
       ]
     }
   ]
- }
+}
 
