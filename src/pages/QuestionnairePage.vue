@@ -100,6 +100,7 @@ async function load() {
     const questionnaires = await midata.loadQuestionnaireByTitle(props.title);
     selectedQuestionnaire.value = toRaw(questionnaires);
     loaded.value = true;
+    console.log('Questionnaire loaded:', selectedQuestionnaire.value);
   } catch (error) {
     console.error('Error loading questionnaires:', error);
   }

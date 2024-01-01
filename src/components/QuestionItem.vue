@@ -7,11 +7,13 @@
         :label="
           option.valueString ||
           option.valueCoding.display ||
+          option.valueCoding.code ||
           option.valueInteger
         "
         :val="
           option.valueString ||
           option.valueCoding.display ||
+          option.valueCoding.code ||
           option.valueInteger
         "
         v-model="question.selected"
