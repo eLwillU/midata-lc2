@@ -78,6 +78,7 @@ export default class MidataService {
             const questionnaires =
               result.entry?.map((entry) => entry.resource as Questionnaire) ||
               [];
+            console.log('Quets: ', questionnaires);
             const filteredQuestionnaire = questionnaires.find(
               (questionnaire) => questionnaire.title === title,
             );
