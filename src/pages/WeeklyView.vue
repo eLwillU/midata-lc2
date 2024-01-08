@@ -1,61 +1,74 @@
 <template>
   <div>Wochenplan</div>
-  <div v-for="i in timeslots" :key="i">
-    <div class="row">
-      <div
-        class="column col-2"
-        style="height: 3em; border: 1px solid black; margin-bottom: -1px"
-      >
-        <div class="text-caption">
-          {{ i.startHour }}:{{ i.startMin }} - {{ i.endHour }}:{{ i.endMin }}
+
+  <div>
+    <q-scroll-area style="height: 100em; max-width: 300px">
+      <div class="row no-wrap">
+        <!-- Time Column -->
+        <div
+          class="column col-3 items-center justify-center"
+          style="border: 1px solid black; height: 3em"
+        >
+          Zeit
+        </div>
+        <!-- Day Columns -->
+        <div
+          v-for="i in weekdays"
+          :key="i"
+          class="column col-5 items-center justify-center"
+          style="border: 1px solid black; height: 3em"
+        >
+          {{ i }}
+        </div>
+
+        <!-- Time Column -->
+      </div>
+
+      <div class="row no-wrap" v-for="t in timeslots" :key="t">
+        <div
+          class="column col-3 items-center justify-center"
+          style="border: 1px solid black; height: 3em"
+        >
+          {{ t.startHour }}:{{ t.startMin }} - {{ t.endHour }}:{{ t.endMin }}
+        </div>
+        <div style="border: 1px solid black; height: 3em">
+          Morgenspaziergang
         </div>
       </div>
-      <div class="column col-2">
-        <q-btn outline square style="height: 3em; margin-bottom: -1px"></q-btn>
-      </div>
-      <div class="column col-2">
-        <q-btn outline square style="height: 3em; margin-bottom: -1px"></q-btn>
-      </div>
-      <div class="column col-2">
-        <q-btn outline square style="height: 3em; margin-bottom: -1px"></q-btn>
-      </div>
-      <div class="column col-2">
-        <q-btn outline square style="height: 3em; margin-bottom: -1px"></q-btn>
-      </div>
-      <div class="column col-2">
-        <q-btn outline square style="height: 3em; margin-bottom: -1px"></q-btn>
-      </div>
-    </div>
+
+      <!-- Day Columns -->
+      <div
+        class="column col-5 items-center justify-center bg-blue-2"
+        style="border: 1px solid black; height: 3em"
+      ></div>
+      <div
+        class="column col-5 items-center justify-center"
+        style="border: 1px solid black; height: 3em"
+      ></div>
+      <div
+        class="column col-5 items-center justify-center"
+        style="border: 1px solid black; height: 3em"
+      ></div>
+      <div
+        class="column col-5 items-center justify-center"
+        style="border: 1px solid black; height: 3em"
+      ></div>
+      <div
+        class="column col-5 items-center justify-center"
+        style="border: 1px solid black; height: 3em"
+      ></div>
+    </q-scroll-area>
   </div>
-  <q-btn @click="toggleOrientation">Toggle Orientation</q-btn>
 </template>
 
 <script setup>
-function toggleOrientation() {
-  if (screen.orientation) {
-    const currentOrientation = screen.orientation.type;
-
-    const newOrientation =
-      currentOrientation === 'landscape-primary'
-        ? 'portrait-primary'
-        : 'landscape-primary';
-
-    screen.orientation
-      .lock(newOrientation)
-      .then(() => console.log(`Orientation toggled to ${newOrientation}`))
-      .catch((err) => console.error('Failed to toggle orientation:', err));
-  } else {
-    console.warn('Screen orientation API is not supported on this device');
-  }
-}
-
+const weekdays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
 const timeslots = [
   {
     startHour: '07',
     startMin: '00',
     endHour: '08',
     endMin: '00',
-    height: '3em',
   },
   {
     startHour: '08',
