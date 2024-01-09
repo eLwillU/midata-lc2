@@ -1,6 +1,5 @@
 <template>
   <div>Wochenplan</div>
-
   <q-markup-table separator="cell" class="no-wrap">
     <thead>
       <th>Zeit</th>
@@ -8,7 +7,6 @@
         <div>{{ d }}</div>
       </th>
     </thead>
-
     <tbody>
       <template v-for="r in rows" :key="r">
         <tr v-if="r.weekly">
@@ -32,7 +30,12 @@
           <td>
             {{ r.timeSlot }}
           </td>
-          <td v-for="d in r.day" :key="d" :rowspan="d.numRows" class="content">
+          <td
+            v-for="d in r.day"
+            :key="d"
+            :rowspan="d.numRows"
+            :class="['content', d.bgColor]"
+          >
             <q-btn
               flat
               no-caps
@@ -56,7 +59,6 @@
 
 <script setup>
 const qButtonClasses = 'q-py-none q-px-sm';
-
 const doubleLine = 'q-btn-double-line';
 const singleLine = 'q-btn-single-line';
 const singleLineWeekly = 'q-btn-single-line-weekly';
@@ -104,6 +106,7 @@ const rows = [
         location: 'Raum 203 / Haus 18',
         numRows: 2,
         dayNum: 0,
+        bgColor: 'bg-green-1',
       },
       {
         fullDescription:
@@ -113,6 +116,7 @@ const rows = [
         location: 'Raum 109 / Haus 18',
         numRows: 2,
         dayNum: 1,
+        bgColor: 'bg-green-1',
       },
       {
         fullDescription:
@@ -122,8 +126,9 @@ const rows = [
         location: 'Raum 109 / Haus 18',
         numRows: 2,
         dayNum: 2,
+        bgColor: 'bg-green-1',
       },
-      {},
+      { numRows: 1 },
       {
         fullDescription: 'Kognitives Training (PDD Prakt) Raum U49 / Haus 14',
         description: 'Kognitives Training',
@@ -131,6 +136,7 @@ const rows = [
         location: 'Raum U49 / Haus 14',
         numRows: 2,
         dayNum: 4,
+        bgColor: 'bg-green-2',
       },
     ],
   },
@@ -145,6 +151,7 @@ const rows = [
         location: null,
         numRows: 2,
         dayNum: 3,
+        bgColor: 'bg-green-4',
       },
     ],
   },
@@ -198,8 +205,9 @@ const rows = [
         person: null,
         location: null,
         numRows: 1,
+        multiLine: false,
       },
-      {numRows: 1},
+      { numRows: 1, multiLine: false },
     ],
   },
   {
@@ -212,14 +220,16 @@ const rows = [
         person: null,
         location: null,
         numRows: 1,
+        multiLine: false,
       },
       {
-        fullDescription: 'Deliktpräventionsgruppe (PDD Gunnar/ Tobias) Raum U45 / Haus 14',
+        fullDescription:
+          'Deliktpräventionsgruppe (PDD Gunnar/ Tobias) Raum U45 / Haus 14',
         description: 'Deliktpräventionsgruppe',
         person: 'PDD Gunnar/ Tobias',
         location: 'Raum U45 / Haus 14',
         numRows: 2,
-      }
+      },
     ],
   },
   {
@@ -233,22 +243,20 @@ const rows = [
         location: 'Halle',
         numRows: 2,
       },
-     
     ],
   },
   {
     timeSlot: '16:00 - 17:00',
     weekly: false,
     day: [
-    {
+      {
         fullDescription: 'Freie Zeit und Abendessen',
         description: 'Freie Zeit und Abendessen',
         person: null,
         location: null,
         numRows: 4,
       },
-    ]
-
+    ],
   },
   {
     timeSlot: '17:00 - 18:00',
@@ -280,31 +288,29 @@ console.log(weekDays, rows);
 .q-btn-single-line {
   white-space: normal;
   width: 12em;
-  height: 100%;
+  height: 4em;
 }
 .q-btn-single-line-weekly {
   white-space: normal;
   width: 100%;
-  height: 100%;
+  height: 4em;
 }
 .q-btn-double-line {
   white-space: normal;
   width: 12em;
-  height: 200%;
+  height: 8em;
 }
 .q-btn-tripple-line {
   white-space: normal;
   width: 12em;
-  height: 300%;
+  height: 12em;
 }
 .q-btn-quad-line {
   white-space: normal;
   width: 12em;
-  height: 400%;
+  min-height: 16em;
 }
-
 .content {
   padding: 0;
-  vertical-align: top;
 }
 </style>
