@@ -5,97 +5,100 @@
     <thead>
       <th>Zeit</th>
       <th v-for="d in weekDays" :key="d">
-        {{ d }}
+        <div>{{ d }}</div>
       </th>
     </thead>
-    
-    <tbody >
-      <!--- Single item Rows --->
-      <tr  v-for="e in events" :key="e" class="q-tr--no-hover">
-        <td
-        v-if="e.weekly">{{ e.time }}</td>
-        <td
-          colspan="5"
-          style="text-align: left"
-          class="bg-blue-2"
-          v-if="e.weekly"
-        >
-          <q-card  flat class="bg-transparent ">
-            {{ e.description }}</q-card
-          >
-        </td>
-      </tr>
-      <tr v-for="r in rows" :key="r">
-        <td>
-          <q-card flat class="bg-transparent" style="width: 5em;">  {{ r.timeSlot }}</q-card>
-        
-        </td>
-        <td v-for="d in r.day" :key="d" :rowspan="d.numRows" >
-          <q-card bordered flat class="bg-transparent;" style="width: 100%;">
-            <q-card-section style="text-wrap: wrap;" class="text-caption">{{ d.description }} </q-card-section> </q-card>
-       </td>
-      </tr>
-     
+
+    <tbody>
+      <template v-for="r in rows" :key="r">
+        <tr v-if="r.weekly">
+          <td>
+            {{ r.timeSlot }}
+          </td>
+          <td colspan="5" class="bg-blue-1 content">
+            <q-btn
+              no-caps
+              flat
+              class="text-caption"
+              align="left"
+              :class="{ [singleLineWeekly]: true, qButtonClasses: true }"
+            >
+              <div>{{ r.description }}</div>
+            </q-btn>
+          </td>
+        </tr>
+
+        <tr v-if="!r.weekly">
+          <td>
+            {{ r.timeSlot }}
+          </td>
+          <td v-for="d in r.day" :key="d" :rowspan="d.numRows" class="content">
+            <q-btn
+              flat
+              no-caps
+              class="text-caption"
+              :class="{
+                [quadLine]: d.numRows === 4,
+                [trippleLine]: d.numRows === 3,
+                [doubleLine]: d.numRows === 2,
+                [singleLine]: d.numRows === 1,
+                qButtonClasses,
+              }"
+            >
+              <div>{{ d.description }}</div></q-btn
+            >
+          </td>
+        </tr>
+      </template>
     </tbody>
   </q-markup-table>
-
-
-
 </template>
 
 <script setup>
+const qButtonClasses = 'q-py-none q-px-sm';
 
-
-
+const doubleLine = 'q-btn-double-line';
+const singleLine = 'q-btn-single-line';
+const singleLineWeekly = 'q-btn-single-line-weekly';
+const trippleLine = 'q-btn-tripple-line';
+const quadLine = 'q-btn-quad-line';
 const rows = [
   {
-    timeSlot: '08:00 - 09:00',
-    day: [
-      {
-        fullDescription: 'Einzelgespräch XY',
-        numRows: 2,
-        dayNum: 0
-      },
-      {
-        fullDescription: 'Gruppentherapie',
-        numRows: 1,
-        dayNum: 1
-      },
-      {
-        fullDescription: 'Bräzeli',
-        numRows: 1,
-        dayNum: 2
-      },
-
-    ]
+    timeSlot: '07:00 - 08:00',
+    description: 'Gemeinsames Frühstück Haus 14 Entwöhnung',
+    person: null,
+    location: null,
+    numRows: null,
+    dayNum: null,
+    weekly: true,
   },
   {
-    timeSlot: '10:00 - 11:00',
+    timeSlot: '08:15 - 08:45',
+
+    description: 'Gemeinsamer Morgen Spaziergang ALLE',
+    person: null,
+    location: null,
+    numRows: null,
+    dayNum: null,
+    weekly: true,
+  },
+  {
+    timeSlot: '08:45 - 09:15',
+
+    description: 'Morgenrunde Haus 18 Entzug',
+    person: null,
+    location: null,
+    numRows: null,
+    dayNum: null,
+    weekly: true,
+  },
+  {
+    timeSlot: '09:15 - 10:00',
+    weekly: false,
     day: [
       {
-        fullDescription: 'Einzelgespräch XY',
-        numRows: 1,
-        dayNum: 1
-
-      },
-      {
-        fullDescription: 'Gruppentherapie',
-        numRows: 1,
-        dayNum: 2
-
-      },
-    ]
-  },
- 
-  { timeSlot: '07:00 - 08:00',
-    
- },
-  { timeSlot: '08:15 - 08:45' },
-  { timeSlot: '08:45 - 09:15' },
-  { timeSlot: '09:15 - 10:00',
-  day: [
-      {
-        fullDescription: 'Ärztliche Gruppen-therapie (ARZT)  RAUM 203 / Haus 18',
+        fullDescription:
+          'Ärztliche Gruppen-therapie (ARZT)  RAUM 203 / Haus 18',
         description: 'Ärztliche Gruppentherapie',
         person: 'Arzt',
         location: 'Raum 203 / Haus 18',
@@ -103,7 +106,8 @@ const rows = [
         dayNum: 0,
       },
       {
-        fullDescription: 'PE Trauma geschlossene Gruppe (PDD Eva / Lara) Raum 109 / Haus 18',
+        fullDescription:
+          'PE Trauma geschlossene Gruppe (PDD Eva / Lara) Raum 109 / Haus 18',
         description: 'PE Trauma geschlossene Gruppe',
         person: 'PDD Eva / Lara',
         location: 'Raum 109 / Haus 18',
@@ -111,74 +115,196 @@ const rows = [
         dayNum: 1,
       },
       {
-        fullDescription: 'Soziale Kompetenzen (PDD Tobias / Prakt) Raum 109 / Haus 18',
+        fullDescription:
+          'Soziale Kompetenzen (PDD Tobias / Prakt) Raum 109 / Haus 18',
         description: 'Soziale Kompetenzen',
         person: 'PDD Tobias / Prakt',
         location: 'Raum 109 / Haus 18',
         numRows: 2,
         dayNum: 2,
       },
-      {
-
-      },
+      {},
       {
         fullDescription: 'Kognitives Training (PDD Prakt) Raum U49 / Haus 14',
         description: 'Kognitives Training',
         person: '(PDD Prakt)',
         location: 'Raum U49 / Haus 14',
         numRows: 2,
+        dayNum: 4,
+      },
+    ],
+  },
+  {
+    timeSlot: '10:00 - 10:45',
+    weekly: false,
+    day: [
+      {
+        fullDescription: 'Visite Haus 14 (M. Safavi)',
+        description: 'Visite Haus 14',
+        person: 'M. Safavi',
+        location: null,
+        numRows: 2,
         dayNum: 3,
       },
-      
-    ] },
-  { timeSlot: '10:00 - 10:45' },
-  { timeSlot: '11:00 - 12:00' },
-  { timeSlot: '12:00 - 13:00' },
-  { timeSlot: '13:30 - 14:00' },
-  { timeSlot: '14:15 - 15:00' },
-  { timeSlot: '15:00 - 16:00' },
-  { timeSlot: '16:00 - 17:00' },
-  { timeSlot: '17:00 - 18:00' },
+    ],
+  },
+  {
+    timeSlot: '11:00 - 12:00',
+    weekly: false,
+    day: [
+      {
+        fullDescription: 'Einzeltermine / Peergespräche',
+        description: 'Einzeltermine / Peergespräche',
+        person: null,
+        location: null,
+        numRows: 1,
+        dayNum: null,
+      },
+      {
+        fullDescription: 'Einzeltermine / Peergespräche',
+        description: 'Einzeltermine / Peergespräche',
+        person: null,
+        location: null,
+        numRows: 1,
+        dayNum: null,
+      },
+      {
+        fullDescription: 'Einzeltermine / Peergespräche',
+        description: 'Einzeltermine / Peergespräche',
+        person: null,
+        location: null,
+        numRows: 1,
+        dayNum: null,
+      },
+      {
+        fullDescription: 'Einzeltermine / Peergespräche',
+        description: 'Einzeltermine / Peergespräche',
+        person: null,
+        location: null,
+        numRows: 1,
+        dayNum: null,
+      },
+    ],
+  },
+  { timeSlot: '12:00 - 13:00', weekly: true, description: 'Mittagessen' },
+
+  {
+    timeSlot: '13:30 - 14:00',
+    weekly: false,
+    day: [
+      {
+        fullDescription: 'Info & Milieusitzung Haus 14',
+        description: 'Info & Milieusitzung',
+        person: null,
+        location: null,
+        numRows: 1,
+      },
+      {numRows: 1},
+    ],
+  },
+  {
+    timeSlot: '14:15 - 15:00',
+    weekly: false,
+    day: [
+      {
+        fullDescription: 'Äemtli Haus 14',
+        description: 'Äemtli Haus 14',
+        person: null,
+        location: null,
+        numRows: 1,
+      },
+      {
+        fullDescription: 'Deliktpräventionsgruppe (PDD Gunnar/ Tobias) Raum U45 / Haus 14',
+        description: 'Deliktpräventionsgruppe',
+        person: 'PDD Gunnar/ Tobias',
+        location: 'Raum U45 / Haus 14',
+        numRows: 2,
+      }
+    ],
+  },
+  {
+    timeSlot: '15:00 - 16:00',
+    weekly: false,
+    day: [
+      {
+        fullDescription: 'Gruppensport in der Halle (Pflege)',
+        description: 'Gruppensport',
+        person: 'Pflege',
+        location: 'Halle',
+        numRows: 2,
+      },
+     
+    ],
+  },
+  {
+    timeSlot: '16:00 - 17:00',
+    weekly: false,
+    day: [
+    {
+        fullDescription: 'Freie Zeit und Abendessen',
+        description: 'Freie Zeit und Abendessen',
+        person: null,
+        location: null,
+        numRows: 4,
+      },
+    ]
+
+  },
+  {
+    timeSlot: '17:00 - 18:00',
+    weekly: false,
+    day: [
+      {
+        fullDescription: 'Freie Zeit und Abendessen',
+        description: 'Freie Zeit und Abendessen',
+        person: null,
+        location: null,
+        numRows: 3,
+      },
+    ],
+  },
   { timeSlot: '18:00 - 19:00' },
   { timeSlot: '19:00 - 20:00' },
-  { timeSlot: '20:00 - 21:00' }
-]
-
-const weekDays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag','Freitag'];
-const events = [
   {
-    fullDescription: 'Gemeinsames Frühstück Haus 14 Entwöhnung',
-    time: '07:00 - 08:00',
+    timeSlot: '20:00 - 21:00',
     weekly: true,
-    weekday: null
-  },
-  {
-    fullDescription: 'Gemeinsamer Morgen Spaziergang ALLE',
-    time: '08:15 - 08:45',
-    weekly: true,
-    weekday: null
-  },
-  {
-    fullDescription: 'Morgenrunde Haus 18 Entzug',
-    time: '08:45 - 09:15',
-    weekly: true,
-    weekday: null
-  },
-  {
-    fullDescription: 'Morgenrunde Haus 18 Entzug',
-    time: '08:45 - 09:15',
-    weekly: false,
-    weekday: 0
-  },
-  {
-    fullDescription: 'Morgenrunde Haus 18 Entzug',
-    time: '08:45 - 09:15',
-    weekly: false,
-    weekday: 1
+    description: 'Abendlicher Spaziergang und anschliessend NADA',
   },
 ];
 
+const weekDays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
 
-console.log(events, weekDays, rows);
+console.log(weekDays, rows);
 </script>
-<style></style>
+<style scoped>
+.q-btn-single-line {
+  white-space: normal;
+  width: 12em;
+  height: 100%;
+}
+.q-btn-single-line-weekly {
+  white-space: normal;
+  width: 100%;
+  height: 100%;
+}
+.q-btn-double-line {
+  white-space: normal;
+  width: 12em;
+  height: 200%;
+}
+.q-btn-tripple-line {
+  white-space: normal;
+  width: 12em;
+  height: 300%;
+}
+.q-btn-quad-line {
+  white-space: normal;
+  width: 12em;
+  height: 400%;
+}
+
+.content {
+  padding: 0;
+  vertical-align: top;
+}
+</style>
