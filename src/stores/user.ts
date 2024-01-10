@@ -3,7 +3,7 @@ import { Patient } from '@i4mi/fhir_r4';
 import { copyToClipboard, Notify } from 'quasar';
 import { useSessionStorage } from '@vueuse/core';
 import { midata } from 'boot/plugins';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 export const useUserStore = defineStore('user', () => {
   /**
@@ -101,6 +101,13 @@ export const useUserStore = defineStore('user', () => {
     currentDay.value = day;
   }
 
+  const showPopup = ref(true);
+
+  function setShowPopup(bool: boolean): void {
+    showPopup.value = bool;
+    console.log('set to: ', showPopup.value);
+  }
+
   return {
     patientResource,
     patientResourceVisible,
@@ -108,9 +115,11 @@ export const useUserStore = defineStore('user', () => {
     fullPatientName,
     appointmentRessources,
     currentDay,
+    showPopup,
     deleteDataInStore,
     copyToClipBoard: copyItemToClipBoard,
     restoreFromMidata,
     setDay,
+    setShowPopup,
   };
 });

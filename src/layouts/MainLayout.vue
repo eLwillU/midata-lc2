@@ -66,7 +66,7 @@ const midataLinksList = [
   {
     title: 'Wochenansicht',
     icon: 'calendar_view_week',
-    link: '/midata/weekView',
+    link: '/midata/weekly',
   },
   {
     title: 'Kalender',

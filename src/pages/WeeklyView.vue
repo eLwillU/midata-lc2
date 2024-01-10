@@ -1,5 +1,27 @@
 <template>
   <div>Wochenplan</div>
+
+  <q-dialog v-model="showPopup" v-if="dontShowAgain">
+    <q-card>
+      <q-card-section class="row items-center no-wrap">
+        <q-icon size="sm" color="red" name="info" class="q-pr-sm"></q-icon>
+        <span
+          >Für mehr Informationen bitte auf den jeweiligen Termin klicken.</span
+        >
+      </q-card-section>
+      <q-card-section class="row items-center">
+        <q-checkbox
+          v-model="dontShowAgainCheckbox"
+          label="Nicht mehr anzeigen."
+        />
+      </q-card-section>
+
+      <q-card-actions align="right">
+        <q-btn flat label="Schliessen" color="primary" @click="closeDialog" />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
+
   <q-markup-table separator="cell" class="no-wrap">
     <thead>
       <th>Zeit</th>
@@ -48,8 +70,8 @@
                 qButtonClasses,
               }"
             >
-              <div>{{ d.description }}</div></q-btn
-            >
+              <div>{{ d.description }}</div>
+            </q-btn>
           </td>
         </tr>
       </template>
@@ -58,6 +80,21 @@
 </template>
 
 <script setup>
+import { useUserStore } from 'stores/user';
+import { ref } from 'vue';
+const store = useUserStore();
+
+const showPopup = ref(true);
+const dontShowAgain = ref(store.showPopup);
+const dontShowAgainCheckbox = ref(false);
+
+function closeDialog() {
+  showPopup.value = false;
+  if (dontShowAgainCheckbox.value) {
+    store.setShowPopup(false);
+  }
+}
+
 const qButtonClasses = 'q-py-none q-px-sm';
 const doubleLine = 'q-btn-double-line';
 const singleLine = 'q-btn-single-line';
@@ -409,8 +446,6 @@ function setColors() {
 }
 
 const weekDays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
-
-console.log(weekDays, rows);
 </script>
 <style scoped>
 .q-btn-single-line {
