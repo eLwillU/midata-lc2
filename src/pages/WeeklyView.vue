@@ -106,7 +106,8 @@ const rows = [
         location: 'Raum 203 / Haus 18',
         numRows: 2,
         dayNum: 0,
-        bgColor: 'bg-green-1',
+        bgColor: '',
+        type: 'group',
       },
       {
         fullDescription:
@@ -116,7 +117,8 @@ const rows = [
         location: 'Raum 109 / Haus 18',
         numRows: 2,
         dayNum: 1,
-        bgColor: 'bg-green-1',
+        bgColor: '',
+        type: 'group',
       },
       {
         fullDescription:
@@ -126,7 +128,8 @@ const rows = [
         location: 'Raum 109 / Haus 18',
         numRows: 2,
         dayNum: 2,
-        bgColor: 'bg-green-1',
+        bgColor: '',
+        type: 'group',
       },
       { numRows: 1 },
       {
@@ -136,7 +139,8 @@ const rows = [
         location: 'Raum U49 / Haus 14',
         numRows: 2,
         dayNum: 4,
-        bgColor: 'bg-green-2',
+        bgColor: '',
+        type: 'group',
       },
     ],
   },
@@ -151,7 +155,8 @@ const rows = [
         location: null,
         numRows: 2,
         dayNum: 3,
-        bgColor: 'bg-green-4',
+        bgColor: '',
+        type: 'physician',
       },
     ],
   },
@@ -166,6 +171,8 @@ const rows = [
         location: null,
         numRows: 1,
         dayNum: null,
+        bgColor: '',
+        type: 'appointment',
       },
       {
         fullDescription: 'Einzeltermine / Peergespräche',
@@ -174,6 +181,8 @@ const rows = [
         location: null,
         numRows: 1,
         dayNum: null,
+        bgColor: '',
+        type: 'appointment',
       },
       {
         fullDescription: 'Einzeltermine / Peergespräche',
@@ -182,6 +191,8 @@ const rows = [
         location: null,
         numRows: 1,
         dayNum: null,
+        bgColor: '',
+        type: 'appointment',
       },
       {
         fullDescription: 'Einzeltermine / Peergespräche',
@@ -190,11 +201,12 @@ const rows = [
         location: null,
         numRows: 1,
         dayNum: null,
+        bgColor: '',
+        type: 'appointment',
       },
     ],
   },
   { timeSlot: '12:00 - 13:00', weekly: true, description: 'Mittagessen' },
-
   {
     timeSlot: '13:30 - 14:00',
     weekly: false,
@@ -205,9 +217,33 @@ const rows = [
         person: null,
         location: null,
         numRows: 1,
-        multiLine: false,
+        type: 'care',
       },
-      { numRows: 1, multiLine: false },
+      { numRows: 1 },
+      {
+        fullDescription: 'Skills DBT  (Pflege)  Raum 203 Haus 18',
+        description: 'Skills DBT',
+        person: 'Pflege',
+        location: 'Raum 203 Haus 18',
+        numRows: 2,
+        type: 'care',
+      },
+      {
+        fullDescription: 'Bildungs-workshop (Job Coach) Raum U45 / Haus 14',
+        description: 'Bildungsworkshop',
+        person: 'Job Coach',
+        location: 'Raum U45 / Haus 14',
+        numRows: 2,
+        type: 'work',
+      },
+      {
+        fullDescription: 'Arbeit / (Agogik)',
+        description: ' Arbeit / (Agogik)',
+        person: 'Agogik',
+        location: null,
+        numRows: 2,
+        type: 'work',
+      },
     ],
   },
   {
@@ -215,12 +251,13 @@ const rows = [
     weekly: false,
     day: [
       {
-        fullDescription: 'Äemtli Haus 14',
-        description: 'Äemtli Haus 14',
+        fullDescription: 'Ämtli Haus 14',
+        description: 'Ämtli Haus 14',
         person: null,
         location: null,
         numRows: 1,
         multiLine: false,
+        type: 'work',
       },
       {
         fullDescription:
@@ -229,6 +266,7 @@ const rows = [
         person: 'PDD Gunnar/ Tobias',
         location: 'Raum U45 / Haus 14',
         numRows: 2,
+        type: 'group',
       },
     ],
   },
@@ -242,6 +280,35 @@ const rows = [
         person: 'Pflege',
         location: 'Halle',
         numRows: 2,
+        type: 'sport',
+        bgColor: '',
+      },
+      {
+        fullDescription: 'Einzeltermine / Peergespräche',
+        description: 'Einzeltermine / Peergespräche',
+        person: null,
+        location: null,
+        numRows: 1,
+        dayNum: null,
+        type: 'appointment',
+      },
+      {
+        fullDescription: 'Einzeltermine / Peergespräche',
+        description: 'Einzeltermine / Peergespräche',
+        person: null,
+        location: null,
+        numRows: 1,
+        dayNum: null,
+        type: 'appointment',
+      },
+      {
+        fullDescription: 'Einzeltermine / Peergespräche',
+        description: 'Einzeltermine / Peergespräche',
+        person: null,
+        location: null,
+        numRows: 1,
+        dayNum: null,
+        type: 'appointment',
       },
     ],
   },
@@ -256,12 +323,42 @@ const rows = [
         location: null,
         numRows: 4,
       },
+
+      {
+        fullDescription: 'Freie Zeit und Abendessen',
+        description: 'Freie Zeit und Abendessen & gemeinsames Kochen',
+        person: null,
+        location: null,
+        numRows: 4,
+      },
+      {
+        fullDescription: 'Freie Zeit und Abendessen',
+        description: 'Freie Zeit und Abendessen',
+        person: null,
+        location: null,
+        numRows: 4,
+      },
+      {
+        fullDescription: 'Ämtli Haus 14',
+        description: 'Ämtli Haus 14',
+        person: null,
+        location: null,
+        numRows: 1,
+        type: 'work',
+      },
     ],
   },
   {
     timeSlot: '17:00 - 18:00',
     weekly: false,
     day: [
+      {
+        fullDescription: 'Freie Zeit und Abendessen',
+        description: 'Freie Zeit und Abendessen',
+        person: null,
+        location: null,
+        numRows: 3,
+      },
       {
         fullDescription: 'Freie Zeit und Abendessen',
         description: 'Freie Zeit und Abendessen',
@@ -279,6 +376,37 @@ const rows = [
     description: 'Abendlicher Spaziergang und anschliessend NADA',
   },
 ];
+setColors();
+
+function setColors() {
+  rows.forEach((row) => {
+    if (row.weekly) {
+      row.bgColor = 'bg-blue-1';
+    }
+    if (row.day) {
+      row.day.forEach((day) => {
+        if (day.type === 'group') {
+          day.bgColor = 'bg-green-4';
+        }
+        if (day.type === 'physician') {
+          day.bgColor = 'bg-green-1';
+        }
+        if (day.type === 'care') {
+          day.bgColor = 'bg-red-2';
+        }
+        if (day.type === 'work') {
+          day.bgColor = 'bg-orange-1';
+        }
+        if (day.type === 'sport') {
+          day.bgColor = 'bg-blue-4';
+        }
+        if (day.type === 'appointment') {
+          day.bgColor = 'bg-grey-5';
+        }
+      });
+    }
+  });
+}
 
 const weekDays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
 
