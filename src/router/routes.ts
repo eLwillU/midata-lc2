@@ -69,28 +69,7 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-  {
-    path: '/midata/weekView',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      {
-        path: '',
-        component: () => import('pages/midata/WeekView.vue'),
-        children: [],
-      },
-    ],
-  },
-  {
-    path: '/midata/calendar',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      {
-        path: '',
-        component: () => import('pages/midata/CalendarView.vue'),
-        children: [],
-      },
-    ],
-  },
+
   {
     path: '/midata/weekly',
     component: () => import('layouts/MainLayout.vue'),

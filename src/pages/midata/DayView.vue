@@ -11,7 +11,6 @@
       location="N123"
     ></AppointmentCardComponent>
   </div>
-  <q-btn @click="logDay" label="Log Day"></q-btn>
 </template>
 
 <script setup>
@@ -35,11 +34,6 @@ const filteredAppointments = computed(() => {
 });
 
 const appointments = ref([]);
-
-function logDay() {
-  console.log('Current day: ', currentDate.value);
-  console.log('Eiqlas', filteredAppointments.value);
-}
 
 onMounted(async () => {
   try {
