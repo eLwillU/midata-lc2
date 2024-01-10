@@ -42,6 +42,7 @@
               class="text-caption"
               align="left"
               :class="{ [singleLineWeekly]: true, qButtonClasses: true }"
+              @click="openDialog(r.description)"
             >
               <div>{{ r.description }}</div>
             </q-btn>
@@ -62,6 +63,7 @@
               flat
               no-caps
               class="text-caption"
+              @click="openDialog(d.description)"
               :class="{
                 [quadLine]: d.numRows === 4,
                 [trippleLine]: d.numRows === 3,
@@ -77,6 +79,15 @@
       </template>
     </tbody>
   </q-markup-table>
+
+  <q-dialog v-model="dialog">
+    <q-card>
+      <q-card-section
+        ><q-btn icon="close" flat round dense v-close-popup />
+        {{ dialogContent }}
+      </q-card-section>
+    </q-card>
+  </q-dialog>
 </template>
 
 <script setup>
@@ -88,11 +99,19 @@ const showPopup = ref(true);
 const dontShowAgain = ref(store.showPopup);
 const dontShowAgainCheckbox = ref(false);
 
+const dialog = ref(false);
+const dialogContent = ref('');
+
 function closeDialog() {
   showPopup.value = false;
   if (dontShowAgainCheckbox.value) {
     store.setShowPopup(false);
   }
+}
+
+function openDialog(content) {
+  dialog.value = true;
+  dialogContent.value = content;
 }
 
 const qButtonClasses = 'q-py-none q-px-sm';
