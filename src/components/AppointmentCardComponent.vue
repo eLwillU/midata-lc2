@@ -45,7 +45,7 @@
       <q-card-section>
         <span class="text-subtitle1 text-weight-bold">Beschreibung: </span
         ><br />
-        <div></div>
+        <div>Hier finden Sie weitere Informationen zur Sitzung...</div>
       </q-card-section>
       <q-card-actions>
         <q-btn flat label="OK" color="primary" v-close-popup />

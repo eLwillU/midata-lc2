@@ -42,7 +42,7 @@
               class="text-caption"
               align="left"
               :class="{ [singleLineWeekly]: true, qButtonClasses: true }"
-              @click="openDialog(r.description)"
+              @click="openDialog(r.description, r.timeSlot)"
             >
               <div>{{ r.description }}</div>
             </q-btn>
@@ -63,7 +63,7 @@
               flat
               no-caps
               class="text-caption"
-              @click="openDialog(d.description)"
+              @click="openDialog(d.description, r.timeSlot, d.location)"
               :class="{
                 [quadLine]: d.numRows === 4,
                 [trippleLine]: d.numRows === 3,
@@ -82,10 +82,26 @@
 
   <q-dialog v-model="dialog">
     <q-card>
-      <q-card-section
-        ><q-btn icon="close" flat round dense v-close-popup />
-        {{ dialogContent }}
+      <q-card-section>
+        <div class="text-h6">{{ dialogContent.title }}</div>
       </q-card-section>
+      <q-card-section class="q-pt-none" horizontal="">
+        <q-card-section>
+          <span class="text-subtitle1 text-weight-bold">Zeit: </span><br />
+          <span>{{ dialogContent.time }}</span>
+        </q-card-section>
+        <q-card-section>
+          <span class="text-subtitle1 text-weight-bold">Ort: </span><br />
+          <q-icon name="location_on" /> {{ dialogContent.location }}
+        </q-card-section>
+      </q-card-section>
+      <q-card-section>
+        <span class="text-subtitle1 text-weight-bold">Beschreibung: </span>
+        <div>Hier finden Sie weitere Informationen zur Sitzung...</div>
+      </q-card-section>
+      <q-card-actions>
+        <q-btn flat label="OK" color="primary" v-close-popup />
+      </q-card-actions>
     </q-card>
   </q-dialog>
 </template>
@@ -100,7 +116,11 @@ const dontShowAgain = ref(store.showPopup);
 const dontShowAgainCheckbox = ref(false);
 
 const dialog = ref(false);
-const dialogContent = ref('');
+const dialogContent = ref({
+  title: '',
+  time: '',
+  location: '',
+});
 
 function closeDialog() {
   showPopup.value = false;
@@ -109,9 +129,14 @@ function closeDialog() {
   }
 }
 
-function openDialog(content) {
+function openDialog(contentDescription, contentTime, contentLocation) {
   dialog.value = true;
-  dialogContent.value = content;
+  dialogContent.value = {
+    title: contentDescription,
+    time: contentTime,
+    location: contentLocation ? contentLocation : 'Treffpunkt',
+  };
+  console.log(contentTime);
 }
 
 const qButtonClasses = 'q-py-none q-px-sm';

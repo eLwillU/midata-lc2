@@ -36,17 +36,7 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-  {
-    path: '/midata/addAppointment',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      {
-        path: '',
-        component: () => import('src/pages/AddAppointment.vue'),
-        children: [],
-      },
-    ],
-  },
+
   {
     path: '/midata/login',
     component: () => import('layouts/MainLayout.vue'),

@@ -76,8 +76,9 @@ module.exports = configure(function (ctx) {
           : 'https://test.midata.coop',
         VUE_FHIR_APP_NAME: ctx.dev ? 'mindschedule' : 'mindschedule',
         VUE_FHIR_REDIRECT_URL: ctx.dev
-          ? 'http://localhost:8080/#/midata/login'
-          : 'https://i4mi.github.io/midata-quasar-starter-app/#/midata/demo', // enter here production url for midata redirect, this url also has to be declared in the Midata app declaration
+          ? 'https://idyllic-chaja-2bcaa1.netlify.app/#/midata/login'
+          : 'https://idyllic-chaja-2bcaa1.netlify.app/#/midata/login',
+        // enter here production url for midata redirect, this url also has to be declared in the Midata app declaration
       },
 
       // https://quasar.dev/quasar-cli/handling-webpack
