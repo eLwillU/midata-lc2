@@ -7,40 +7,42 @@
         <div class="text-h6">{{ questionnaireDetails.title }}</div>
         <div class="text-subtitle2">{{ questionnaireDetails.subtitle }}</div>
       </q-card-section>
-      <q-card-section class="q-pt-none">{{ questionnaireDetails.content }}</q-card-section>
+      <q-card-section class="q-pt-none">{{
+        questionnaireDetails.content
+      }}</q-card-section>
     </q-card>
   </div>
 
   <!-- Likert-Skala nur für den BSCL-Fragebogen -->
- <div v-if="loaded && display && props.title === 'BSCL V1'" class="q-pa-md">
-  <div class="flex justify-around text-center">
-    <div class="q-mx-xs">
-      <q-icon name="sentiment_very_dissatisfied" size="md" />
-      <div>0</div>
-      <div>überhaupt nicht</div>
-    </div>
-    <div class="q-mx-xs">
-      <q-icon name="sentiment_dissatisfied" size="md" />
-      <div>1</div>
-      <div>ein wenig</div>
-    </div>
-    <div class="q-mx-xs">
-      <q-icon name="sentiment_neutral" size="md" />
-      <div>2</div>
-      <div>ziemlich</div>
-    </div>
-    <div class="q-mx-xs">
-      <q-icon name="sentiment_satisfied" size="md" />
-      <div>3</div>
-      <div>stark</div>
-    </div>
-    <div class="q-mx-xs">
-      <q-icon name="sentiment_very_satisfied" size="md" />
-      <div>4</div>
-      <div>sehr stark</div>
+  <div v-if="loaded && display && props.title === 'BSCL V1'" class="q-pa-md">
+    <div class="flex justify-around text-center">
+      <div class="q-mx-xs">
+        <q-icon name="sentiment_very_dissatisfied" size="md" />
+        <div>0</div>
+        <div>überhaupt nicht</div>
+      </div>
+      <div class="q-mx-xs">
+        <q-icon name="sentiment_dissatisfied" size="md" />
+        <div>1</div>
+        <div>ein wenig</div>
+      </div>
+      <div class="q-mx-xs">
+        <q-icon name="sentiment_neutral" size="md" />
+        <div>2</div>
+        <div>ziemlich</div>
+      </div>
+      <div class="q-mx-xs">
+        <q-icon name="sentiment_satisfied" size="md" />
+        <div>3</div>
+        <div>stark</div>
+      </div>
+      <div class="q-mx-xs">
+        <q-icon name="sentiment_very_satisfied" size="md" />
+        <div>4</div>
+        <div>sehr stark</div>
+      </div>
     </div>
   </div>
-</div>
 
   <!-- Fortschrittsbalken -->
   <div class="q-pa-md" v-if="loaded && display">
@@ -62,7 +64,7 @@
     <!-- Navigationsbuttons für Weiter und Zurück -->
     <div class="row justify-between q-mt-md">
       <q-btn
-        v-if="currentPage > 1"
+        :disable="currentPage <= 1"
         @click="previousPage"
         label="Zurück"
         color="primary"
@@ -121,22 +123,28 @@ const questionsPerPage = 5;
 const questionnaireDetails = computed(() => {
   if (props.title === 'Zupaz V4') {
     return {
-      imageSrc: 'https://www.flixcheck.de/wp-content/uploads/2022/03/kundenzufriedenheit-messen.jpeg',
-      content: 'Bitte teilen Sie uns Ihre Meinung zu Ihrem Aufenthalt in unserer Klinik mit. ' + 'Dieser kurze Fragebogen, der etwa 10 Minuten in Anspruch nimmt, zielt darauf ab, Ihre Erfahrungen und Zufriedenheit zu erfassen. ' + 'Kreuzen Sie bitte jeweils die Antwort an, die am ehesten auf Ihr Erleben beim Aufenthalt in der Psychiatrischen Klinik der SFK zutrifft. Ihre Antworten sind anonym und vertraulich. ' + 'Vielen Dank für Ihre Unterstützung! - Suchtfachklinik Zürich',
+      imageSrc:
+        'https://www.flixcheck.de/wp-content/uploads/2022/03/kundenzufriedenheit-messen.jpeg',
+      content:
+        'Bitte teilen Sie uns Ihre Meinung zu Ihrem Aufenthalt in unserer Klinik mit. ' +
+        'Dieser kurze Fragebogen, der etwa 10 Minuten in Anspruch nimmt, zielt darauf ab, Ihre Erfahrungen und Zufriedenheit zu erfassen. ' +
+        'Kreuzen Sie bitte jeweils die Antwort an, die am ehesten auf Ihr Erleben beim Aufenthalt in der Psychiatrischen Klinik der SFK zutrifft. Ihre Antworten sind anonym und vertraulich. ' +
+        'Vielen Dank für Ihre Unterstützung! - Suchtfachklinik Zürich',
       title: 'Zürcher Patientenzufriedenheits-Fragebogen für Psychiatrie',
-      subtitle: '(Züpaz)'
+      subtitle: '(Züpaz)',
     };
   } else if (props.title === 'BSCL V1') {
     return {
-      imageSrc: 'https://www.commma.de/wp-content/uploads/2021/08/Selbstreflexion-coaching-commma-fuehrung.jpg',
-      content: 'Hier finden Sie eine Liste verschiedener Probleme und Beschwerden, die gelegentlich auftreten können. Bitte lesen Sie jede Frage sorgfältig durch und bewerten Sie, wie sehr Sie in den letzten sieben Tagen bis heute durch diese Beschwerden beeinträchtigt wurden. Es ist wichtig, dass Sie nicht überlegen, welche Antworten den „besten Eindruck“ hinterlassen könnten, sondern ehrlich antworten, wie es für Sie persönlich zutrifft. Wählen Sie bitte bei jeder Frage die Antwort, die am besten auf Sie zutrifft.',
+      imageSrc:
+        'https://www.commma.de/wp-content/uploads/2021/08/Selbstreflexion-coaching-commma-fuehrung.jpg',
+      content:
+        'Hier finden Sie eine Liste verschiedener Probleme und Beschwerden, die gelegentlich auftreten können. Bitte lesen Sie jede Frage sorgfältig durch und bewerten Sie, wie sehr Sie in den letzten sieben Tagen bis heute durch diese Beschwerden beeinträchtigt wurden. Es ist wichtig, dass Sie nicht überlegen, welche Antworten den „besten Eindruck“ hinterlassen könnten, sondern ehrlich antworten, wie es für Sie persönlich zutrifft. Wählen Sie bitte bei jeder Frage die Antwort, die am besten auf Sie zutrifft.',
       title: 'Fragebogen zur Erfassung von Problemen und Beschwerden',
-      subtitle: '(BSCL)'
+      subtitle: '(BSCL)',
     };
   }
   return { imageSrc: '', content: '', title: '', subtitle: '' };
 });
-
 
 async function load() {
   try {
