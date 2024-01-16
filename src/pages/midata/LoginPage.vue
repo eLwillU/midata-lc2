@@ -2,7 +2,7 @@
   <login-card v-if="!$midata.isLoggedIn()"></login-card>
   <q-page v-if="$midata.isLoggedIn()">
     <div class="q-mb-xl">
-      <div class="text-h3 text-weight-thin">Midata Demo</div>
+      <div class="text-h4 text-weight-thin">Mein Profil</div>
       <q-separator spaced class="midata-fade"></q-separator>
     </div>
 

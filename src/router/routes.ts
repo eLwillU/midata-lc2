@@ -6,26 +6,6 @@ const routes: RouteRecordRaw[] = [
     redirect: '/midata/login',
   },
   {
-    path: '/midata/introduction',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      {
-        path: '',
-        component: () => import('pages/midata/MidataIntroduction.vue'),
-      },
-    ],
-  },
-  {
-    path: '/midata/myFirstApp',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      {
-        path: '',
-        component: () => import('pages/midata/MidataMyFirstApp.vue'),
-      },
-    ],
-  },
-  {
     path: '/midata/demo',
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -54,7 +34,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
-        component: () => import('pages/midata/DayView.vue'),
+        component: () => import('pages/DayView.vue'),
         children: [],
       },
     ],
@@ -78,17 +58,6 @@ const routes: RouteRecordRaw[] = [
       {
         path: '',
         component: () => import('pages/QuestionnairesOverview.vue'),
-        children: [],
-      },
-    ],
-  },
-  {
-    path: '/midata/questionnaire',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      {
-        path: '',
-        component: () => import('pages/QuestionnairePage.vue'),
         children: [],
       },
     ],

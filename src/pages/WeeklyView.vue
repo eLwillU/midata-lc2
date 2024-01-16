@@ -1,6 +1,4 @@
 <template>
-  <div>Wochenplan</div>
-
   <q-dialog v-model="showPopup" v-if="dontShowAgain">
     <q-card>
       <q-card-section class="row items-center no-wrap">
