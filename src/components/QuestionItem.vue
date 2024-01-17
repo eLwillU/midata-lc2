@@ -26,10 +26,10 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue';
-const props = defineProps({
+import { ref } from 'vue';
+const props = {
   question: Object,
-});
+};
 
 const question = ref(props.question);
 </script>

@@ -1,5 +1,17 @@
 <template>
-  <DaySelector></DaySelector>
+  <login-card v-if="!$midata.isLoggedIn()"></login-card>
+  <template v-if="$midata.isLoggedIn()">
+  <q-dialog v-model="showDialog">
+  <q-card>
+    <q-card-section>
+      
+    <div class="text-bold text-h6">Zur Info beim Testen:
+      Alle Termine sind am 15.01.2024 eingetragen.
+    </div>
+  </q-card-section> 
+  </q-card>
+  </q-dialog>
+  <DaySelector></DaySelector> 
   <div>
     <AppointmentCardComponent
       v-for="appointment in filteredAppointments"
@@ -12,6 +24,7 @@
     ></AppointmentCardComponent>
   </div>
 </template>
+</template>
 
 <script setup>
 import { onMounted, ref, computed } from 'vue';
@@ -19,6 +32,9 @@ import { midata } from 'src/boot/plugins';
 import AppointmentCardComponent from 'src/components/AppointmentCardComponent.vue';
 import DaySelector from 'src/components/DaySelector.vue';
 import { useUserStore } from 'stores/user';
+import LoginCard from '../components/LoginCard.vue';
+
+const showDialog = ref(true)
 
 const currentDate = computed(() => useUserStore().currentDay);
 const filteredAppointments = computed(() => {

@@ -1,4 +1,8 @@
 <template>
+    <login-card v-if="!$midata.isLoggedIn()"></login-card>
+
+    <template v-if="$midata.isLoggedIn()">
+
   <q-btn @click="toggleBscl" color="primary" :disable="bscl"> BSCL</q-btn>
   <q-btn @click="toggleZupaz" :disable="zupaz"> ZUPAZ</q-btn>
 
@@ -10,9 +14,12 @@
     <QuestionnairePage title="BSCL V1"></QuestionnairePage>
   </div>
 </template>
+</template>
 
 <script setup>
 import QuestionnairePage from './QuestionnairePage.vue';
+import LoginCard from '../components/LoginCard.vue';
+
 import { ref } from 'vue';
 
 const zupaz = ref(false);

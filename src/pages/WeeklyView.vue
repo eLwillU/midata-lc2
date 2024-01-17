@@ -1,4 +1,6 @@
 <template>
+  <login-card v-if="!$midata.isLoggedIn()"></login-card>
+  <template v-if="$midata.isLoggedIn()">
   <q-dialog v-model="showPopup" v-if="dontShowAgain">
     <q-card>
       <q-card-section class="row items-center no-wrap">
@@ -76,6 +78,7 @@
         </tr>
       </template>
     </tbody>
+
   </q-markup-table>
 
   <q-dialog v-model="dialog">
@@ -103,10 +106,13 @@
     </q-card>
   </q-dialog>
 </template>
+</template>
 
 <script setup>
 import { useUserStore } from 'stores/user';
 import { ref } from 'vue';
+import LoginCard from '../components/LoginCard.vue';
+
 const store = useUserStore();
 
 const showPopup = ref(true);
