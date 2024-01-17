@@ -3,8 +3,11 @@
 
     <template v-if="$midata.isLoggedIn()">
 
-  <q-btn @click="toggleBscl" color="primary" :disable="bscl"> BSCL</q-btn>
-  <q-btn @click="toggleZupaz" :disable="zupaz"> ZUPAZ</q-btn>
+      <q-btn-group>
+  <q-btn @click="toggleBscl" color="primary" outline :disable="bscl"> BSCL</q-btn>
+  <q-btn @click="toggleZupaz" color="primary" outline :disable="zupaz"> Züpaz</q-btn>
+
+</q-btn-group>
 
   <div v-if="zupaz">
     <QuestionnairePage title="Zupaz V4"></QuestionnairePage>
