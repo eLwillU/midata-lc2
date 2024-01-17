@@ -34,7 +34,10 @@ npm install npm -g
 ```
 
 ### Repository
-To download the repo from github, use `git clone https://github.com/i4mi/midata-quasar-starter-app.git` in your terminal.
+To download the repo from github, use `git clone https://github.com/eLwillU/midata-lc2.git` in your terminal.
+
+### ZIP File
+If you got the code in a zip file you can extract it with a software like 7zip and navigate to this folder using the console.
 
 ### Install the dependencies
 Then change the directory with `cd midata-quasar-starter-app` and install the dependencies.
