@@ -27,9 +27,9 @@
 
 <script setup>
 import { ref } from 'vue';
-const props = {
+const props = defineProps({
   question: Object,
-};
+});
 
 const question = ref(props.question);
 </script>
