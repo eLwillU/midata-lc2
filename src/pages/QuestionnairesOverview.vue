@@ -1,22 +1,24 @@
 <template>
-    <login-card v-if="!$midata.isLoggedIn()"></login-card>
+  <login-card v-if="!$midata.isLoggedIn()"></login-card>
 
-    <template v-if="$midata.isLoggedIn()">
+  <template v-if="$midata.isLoggedIn()">
+    <q-btn-group>
+      <q-btn @click="toggleBscl" color="primary" outline :disable="bscl">
+        BSCL</q-btn
+      >
+      <q-btn @click="toggleZupaz" color="primary" outline :disable="zupaz">
+        Züpaz</q-btn
+      >
+    </q-btn-group>
 
-      <q-btn-group>
-  <q-btn @click="toggleBscl" color="primary" outline :disable="bscl"> BSCL</q-btn>
-  <q-btn @click="toggleZupaz" color="primary" outline :disable="zupaz"> Züpaz</q-btn>
+    <div v-if="zupaz">
+      <QuestionnairePage title="Zupaz V4"></QuestionnairePage>
+    </div>
 
-</q-btn-group>
-
-  <div v-if="zupaz">
-    <QuestionnairePage title="Zupaz V4"></QuestionnairePage>
-  </div>
-
-  <div v-if="bscl">
-    <QuestionnairePage title="BSCL V1"></QuestionnairePage>
-  </div>
-</template>
+    <div v-if="bscl">
+      <QuestionnairePage title="BSCL V1"></QuestionnairePage>
+    </div>
+  </template>
 </template>
 
 <script setup>

@@ -1,111 +1,111 @@
 <template>
   <login-card v-if="!$midata.isLoggedIn()"></login-card>
   <template v-if="$midata.isLoggedIn()">
-  <q-dialog v-model="showPopup" v-if="dontShowAgain">
-    <q-card>
-      <q-card-section class="row items-center no-wrap">
-        <q-icon size="sm" color="red" name="info" class="q-pr-sm"></q-icon>
-        <span
-          >Für mehr Informationen bitte auf den jeweiligen Termin klicken.</span
-        >
-      </q-card-section>
-      <q-card-section class="row items-center">
-        <q-checkbox
-          v-model="dontShowAgainCheckbox"
-          label="Nicht mehr anzeigen."
-        />
-      </q-card-section>
-
-      <q-card-actions align="right">
-        <q-btn flat label="Schliessen" color="primary" @click="closeDialog" />
-      </q-card-actions>
-    </q-card>
-  </q-dialog>
-
-  <q-markup-table separator="cell" class="no-wrap">
-    <thead>
-      <th>Zeit</th>
-      <th v-for="d in weekDays" :key="d">
-        <div>{{ d }}</div>
-      </th>
-    </thead>
-    <tbody>
-      <template v-for="r in rows" :key="r">
-        <tr v-if="r.weekly">
-          <td>
-            {{ r.timeSlot }}
-          </td>
-          <td colspan="5" class="bg-blue-1 content">
-            <q-btn
-              no-caps
-              flat
-              class="text-caption"
-              align="left"
-              :class="{ [singleLineWeekly]: true, qButtonClasses: true }"
-              @click="openDialog(r.description, r.timeSlot)"
-            >
-              <div>{{ r.description }}</div>
-            </q-btn>
-          </td>
-        </tr>
-
-        <tr v-if="!r.weekly">
-          <td>
-            {{ r.timeSlot }}
-          </td>
-          <td
-            v-for="d in r.day"
-            :key="d"
-            :rowspan="d.numRows"
-            :class="['content', d.bgColor]"
+    <q-dialog v-model="showPopup" v-if="dontShowAgain">
+      <q-card>
+        <q-card-section class="row items-center no-wrap">
+          <q-icon size="sm" color="red" name="info" class="q-pr-sm"></q-icon>
+          <span
+            >Für mehr Informationen bitte auf den jeweiligen Termin
+            klicken.</span
           >
-            <q-btn
-              flat
-              no-caps
-              class="text-caption"
-              @click="openDialog(d.description, r.timeSlot, d.location)"
-              :class="{
-                [quadLine]: d.numRows === 4,
-                [trippleLine]: d.numRows === 3,
-                [doubleLine]: d.numRows === 2,
-                [singleLine]: d.numRows === 1,
-                qButtonClasses,
-              }"
+        </q-card-section>
+        <q-card-section class="row items-center">
+          <q-checkbox
+            v-model="dontShowAgainCheckbox"
+            label="Nicht mehr anzeigen."
+          />
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="Schliessen" color="primary" @click="closeDialog" />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <q-markup-table separator="cell" class="no-wrap">
+      <thead>
+        <th>Zeit</th>
+        <th v-for="d in weekDays" :key="d">
+          <div>{{ d }}</div>
+        </th>
+      </thead>
+      <tbody>
+        <template v-for="r in rows" :key="r">
+          <tr v-if="r.weekly">
+            <td>
+              {{ r.timeSlot }}
+            </td>
+            <td colspan="5" class="bg-blue-1 content">
+              <q-btn
+                no-caps
+                flat
+                class="text-caption"
+                align="left"
+                :class="{ [singleLineWeekly]: true, qButtonClasses: true }"
+                @click="openDialog(r.description, r.timeSlot)"
+              >
+                <div>{{ r.description }}</div>
+              </q-btn>
+            </td>
+          </tr>
+
+          <tr v-if="!r.weekly">
+            <td>
+              {{ r.timeSlot }}
+            </td>
+            <td
+              v-for="d in r.day"
+              :key="d"
+              :rowspan="d.numRows"
+              :class="['content', d.bgColor]"
             >
-              <div>{{ d.description }}</div>
-            </q-btn>
-          </td>
-        </tr>
-      </template>
-    </tbody>
+              <q-btn
+                flat
+                no-caps
+                class="text-caption"
+                @click="openDialog(d.description, r.timeSlot, d.location)"
+                :class="{
+                  [quadLine]: d.numRows === 4,
+                  [trippleLine]: d.numRows === 3,
+                  [doubleLine]: d.numRows === 2,
+                  [singleLine]: d.numRows === 1,
+                  qButtonClasses,
+                }"
+              >
+                <div>{{ d.description }}</div>
+              </q-btn>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </q-markup-table>
 
-  </q-markup-table>
-
-  <q-dialog v-model="dialog">
-    <q-card>
-      <q-card-section>
-        <div class="text-h6">{{ dialogContent.title }}</div>
-      </q-card-section>
-      <q-card-section class="q-pt-none" horizontal="">
+    <q-dialog v-model="dialog">
+      <q-card>
         <q-card-section>
-          <span class="text-subtitle1 text-weight-bold">Zeit: </span><br />
-          <span>{{ dialogContent.time }}</span>
+          <div class="text-h6">{{ dialogContent.title }}</div>
+        </q-card-section>
+        <q-card-section class="q-pt-none" horizontal="">
+          <q-card-section>
+            <span class="text-subtitle1 text-weight-bold">Zeit: </span><br />
+            <span>{{ dialogContent.time }}</span>
+          </q-card-section>
+          <q-card-section>
+            <span class="text-subtitle1 text-weight-bold">Ort: </span><br />
+            <q-icon name="location_on" /> {{ dialogContent.location }}
+          </q-card-section>
         </q-card-section>
         <q-card-section>
-          <span class="text-subtitle1 text-weight-bold">Ort: </span><br />
-          <q-icon name="location_on" /> {{ dialogContent.location }}
+          <span class="text-subtitle1 text-weight-bold">Beschreibung: </span>
+          <div>Hier finden Sie weitere Informationen zur Sitzung...</div>
         </q-card-section>
-      </q-card-section>
-      <q-card-section>
-        <span class="text-subtitle1 text-weight-bold">Beschreibung: </span>
-        <div>Hier finden Sie weitere Informationen zur Sitzung...</div>
-      </q-card-section>
-      <q-card-actions>
-        <q-btn flat label="OK" color="primary" v-close-popup />
-      </q-card-actions>
-    </q-card>
-  </q-dialog>
-</template>
+        <q-card-actions>
+          <q-btn flat label="OK" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+  </template>
 </template>
 
 <script setup>
