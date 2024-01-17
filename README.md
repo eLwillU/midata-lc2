@@ -1,3 +1,7 @@
+### Sources:
+The main layout of the code, with all the midata (login) functionallity was provided by the I4MI and adapted for our uses.
+
+
 ## Setup
 
 Node and npm have to be installed on your machine. The nodejs package includes both node and npm executables.
